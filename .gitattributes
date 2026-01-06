@@ -1,0 +1,24 @@
+﻿# Default: text files use LF
+* text=auto eol=lf
+
+# Windows scripts
+*.ps1 text eol=crlf
+
+# Config & source
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+
+# Shell
+*.sh text eol=lf
+
+# Binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.svg binary
+*.ico binary
+*.pdf binary
