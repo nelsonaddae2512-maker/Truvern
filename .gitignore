@@ -492,3 +492,9 @@ tailwind.config.js
 vercel-all.ps1
 vercel-env-sync.ps1
 vercel_backup.json
+
+# Local secrets / auth state
+.auth/
+.env*.BAK
+.env.__pulled.BAK
+.env.temp.BAK
