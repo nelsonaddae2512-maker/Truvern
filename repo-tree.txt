@@ -1,0 +1,2813 @@
+﻿Repository Tree
+Root: C:\dev\truvern
+Generated: 2026-04-12 22:47:38
+MaxDepth: 8
+
++ truvern\
+|  + .auth\
+|  |  - storageState.json
+|  + .backups\
+|  |  - package.json.bak
+|  |  - seed.ts.bak
+|  |  - vercel.json.bak
+|  + .github\
+|  |  + workflows\
+|  |  |  - ci.yml
+|  |  |  - prod-ci.yml
+|  |  |  - vercel-deploy.yml
+|  + .npm-cache\
+|  |  + _logs\
+|  + .vercel.bak-20251111-022502\
+|  |  - project.json
+|  |  - README.txt
+|  + _archive\
+|  |  + sign-in.disabled\
+|  |  |  + [[...sign-in]]\
+|  |  |  |  - page.tsx
+|  + _backups\
+|  |  + phase328A_20251221_225534\
+|  + _disabled\
+|  |  + app__vendor-portal.disabled.BAK\
+|  |  |  + assessments\
+|  |  |  |  + [id]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + evidence-requests\
+|  |  |  |  + [id]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  |  - page.tsx.CORRUPTED.ps1.txt
+|  |  |  - page.tsx
+|  |  + trust-network.disabled\
+|  |  |  + trust-network.disabled\
+|  |  |  |  + vendor\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  - error.tsx
+|  |  |  |  - layout.tsx
+|  |  |  |  - page.disabled.tsx
+|  |  |  |  - page.tsx.20251108-185303.bak
+|  |  |  |  - page.tsx.bak
+|  |  |  |  - page.tsx.bak-20251115-232206
+|  |  - apple-icon.tsx
+|  |  - icon.tsx
+|  + app\
+|  |  + (app)\
+|  |  |  + account\
+|  |  |  |  + billing\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + trust-network\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + assessment\
+|  |  |  |  + runs\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + results\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  - assessment-run-workspace.client.tsx
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  - run-workspace.client.tsx
+|  |  |  |  |  |  - workspace-shell.client.tsx
+|  |  |  + assessments\
+|  |  |  |  + [id]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + new\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + review\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - assessments-searchbar.client.tsx
+|  |  |  |  - page.tsx
+|  |  |  + assessment-templates\
+|  |  |  |  + catalog\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + billing\
+|  |  |  |  - page.tsx
+|  |  |  + board\
+|  |  |  |  - page.tsx
+|  |  |  + board-packet-internal\
+|  |  |  |  - page.tsx
+|  |  |  + board-report-internal\
+|  |  |  |  - page.tsx
+|  |  |  + dashboard\
+|  |  |  |  + admin\
+|  |  |  |  |  + api\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + billing\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + buyer\
+|  |  |  |  |  + api\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - page.tsx.20251108-193303.bak
+|  |  |  |  |  - route.ts
+|  |  |  |  + review\
+|  |  |  |  |  - create-review-from-purchase.client.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  |  + trust\
+|  |  |  |  |  + api\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  - layout.tsx
+|  |  |  |  - layout.tsx.bak_trustnet_20260209_230356
+|  |  |  |  - page.tsx
+|  |  |  |  - page.tsx.bak_trustnet_20260209_230356
+|  |  |  + dev\
+|  |  |  |  + org-plan\
+|  |  |  |  |  - route.ts
+|  |  |  |  + org-tools\
+|  |  |  |  |  - org-tools.client.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  + evidence\
+|  |  |  |  + new\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + evidence-ops\
+|  |  |  |  + templates\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + instantiate\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - page.tsx
+|  |  |  |  |  - templates.client.tsx
+|  |  |  |  - page.tsx
+|  |  |  + evidence-requests\
+|  |  |  |  + [id]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + issues\
+|  |  |  |  + [id]\
+|  |  |  |  |  + update\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - page.tsx
+|  |  |  |  + new\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + notifications\
+|  |  |  |  - page.tsx
+|  |  |  + program-state\
+|  |  |  |  + verify\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  |  - program-state-actions.client.tsx
+|  |  |  |  - program-state-editor.client.tsx
+|  |  |  + review-desk\
+|  |  |  |  + dev-paid-review\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + request-truvern\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + reviews\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  - loading.tsx
+|  |  |  |  - not-authorized.tsx
+|  |  |  |  - page.tsx
+|  |  |  + reviews\
+|  |  |  |  + [...slug]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + [id]\
+|  |  |  |  |  + results\
+|  |  |  |  |  |  + print\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  |  - print-button.client.tsx
+|  |  |  |  |  |  - finalize-button.client.tsx
+|  |  |  |  |  |  - finalize-results-button.client.tsx
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  - results.client.tsx
+|  |  |  |  |  |  - results-export-buttons.client.tsx
+|  |  |  |  |  - admin-finalize.client.tsx
+|  |  |  |  |  - error.tsx
+|  |  |  |  |  - evidence-links.client.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  |  |  - review-workspace.client.tsx
+|  |  |  |  - page.tsx
+|  |  |  + settings\
+|  |  |  |  + billing\
+|  |  |  |  |  + buy-credits\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  |  + evidence-coverage\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + internal-assessors\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + organization\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + trust-network\
+|  |  |  |  - page.tsx
+|  |  |  + trust-network-internal\
+|  |  |  |  - auto-open-share-panel.client.tsx
+|  |  |  |  - copyable-trust-link-button.client.tsx
+|  |  |  |  - loading.tsx
+|  |  |  |  - open-public-page-button.client.tsx
+|  |  |  |  - page.tsx
+|  |  |  |  - share-trust-network.client.tsx
+|  |  |  |  - share-trust-network-button.client.tsx
+|  |  |  |  - view-trust-page-button.client.tsx
+|  |  |  + truvern\
+|  |  |  |  + ops\
+|  |  |  |  |  + reviews\
+|  |  |  |  |  |  + [id]\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  |  - review-actions.client.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  |  |  - truvern-ops-queue.client.tsx
+|  |  |  + vendors\
+|  |  |  |  + [id]\
+|  |  |  |  |  + __tmp_vendor__\
+|  |  |  |  |  |  + evidence-requests\
+|  |  |  |  |  |  |  + [requestId]\
+|  |  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + activity\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + assessment\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + assessments\
+|  |  |  |  |  |  + manage\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  |  - unapply-framework-button.client.tsx
+|  |  |  |  |  |  + new\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  - add-assessment-modal.client.tsx
+|  |  |  |  |  |  - apply-starter-button.client.tsx
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  - remove-framework-inline.client.tsx
+|  |  |  |  |  |  - set-applied-button.client.tsx
+|  |  |  |  |  |  - vendor-assessments-hub.client.tsx
+|  |  |  |  |  + board-packet\
+|  |  |  |  |  |  + print\
+|  |  |  |  |  |  |  - layout.tsx
+|  |  |  |  |  + board-report\
+|  |  |  |  |  |  + print\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  |  - print-button.client.tsx
+|  |  |  |  |  |  - board-narrative-editor.client.tsx
+|  |  |  |  |  |  - narrative-panel.client.tsx
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + edit\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + evidence\
+|  |  |  |  |  |  + [evidenceId]\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + evidence-requests\
+|  |  |  |  |  |  + [requestId]\
+|  |  |  |  |  |  |  + __tmp_er__\
+|  |  |  |  |  |  |  |  + evidence-requests\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  + new\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + findings\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + review-requests\
+|  |  |  |  |  |  + new\
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  |  - review-request-form.client.tsx
+|  |  |  |  |  + snapshots\
+|  |  |  |  |  |  + [snapshotId]\
+|  |  |  |  |  |  |  - copy-text-button.client.tsx
+|  |  |  |  |  |  |  - page.tsx
+|  |  |  |  |  - actions.ts
+|  |  |  |  |  - applied-assessment-callout.server.tsx
+|  |  |  |  |  - copy-to-clipboard-button.client.tsx
+|  |  |  |  |  - create-from-template.client.tsx
+|  |  |  |  |  - delete-vendor-button.client.tsx
+|  |  |  |  |  - generate-risk-snapshot-button.client.tsx
+|  |  |  |  |  - open-template-modal-button.client.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  |  |  - page.tsx.bak
+|  |  |  |  |  - risk-basis-popover.client.tsx
+|  |  |  |  |  - risk-snapshot-generate-button.tsx
+|  |  |  |  |  - tab-autoscroll.client.tsx
+|  |  |  |  |  - vendor-template-apply-panel.client.tsx
+|  |  |  |  + new\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - _test.txt
+|  |  |  |  - page.tsx
+|  |  |  |  - vendor-delete-form.client.tsx
+|  |  |  |  - vendor-registry-flash-cleaner.client.tsx
+|  |  |  - error.tsx
+|  |  |  - layout.tsx
+|  |  + (marketing)\
+|  |  |  + assessment\
+|  |  |  |  + demo\
+|  |  |  |  |  - demo-assessment.client.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  + board-report\
+|  |  |  |  - page.tsx
+|  |  |  + contact\
+|  |  |  |  - page.tsx
+|  |  |  + features\
+|  |  |  |  - page.tsx
+|  |  |  + managed-reviews\
+|  |  |  |  - page.tsx
+|  |  |  + pricing\
+|  |  |  |  - page.tsx
+|  |  |  + sales\
+|  |  |  |  - page.tsx
+|  |  |  + trust-network\
+|  |  |  |  + demo\
+|  |  |  |  |  - page.tsx
+|  |  |  |  + overview\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - copy-link-button.client.tsx
+|  |  |  |  - trust-network.client.tsx
+|  |  |  + truvern-review\
+|  |  |  |  - page.tsx
+|  |  |  - layout.tsx
+|  |  |  - page.tsx
+|  |  + (site)\
+|  |  |  + buyers\
+|  |  |  |  - page.tsx
+|  |  |  |  - page.tsx.20251108-193532.bak
+|  |  |  + features\
+|  |  |  |  - page.tsx.20251108-193746.bak
+|  |  |  + vendors\
+|  |  + _not-found\
+|  |  |  - page.tsx
+|  |  + _sign-up.DISABLED\
+|  |  |  + [[...sign-up]]\
+|  |  |  |  - page.tsx
+|  |  + _sign-up.disabled.bak\
+|  |  |  + [[...sign-up]]\
+|  |  |  |  - page.tsx
+|  |  + about\
+|  |  |  - page.tsx
+|  |  |  - page.tsx.20251108-194136.bak
+|  |  + account\
+|  |  |  + billing\
+|  |  + activity\
+|  |  |  - page.tsx
+|  |  + api\
+|  |  |  + _debug\
+|  |  |  |  + clerk-auth\
+|  |  |  |  |  - route.ts
+|  |  |  |  + env\
+|  |  |  |  |  - route.ts
+|  |  |  + activity\
+|  |  |  |  + summary\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + activity-feed\
+|  |  |  |  - route.ts
+|  |  |  + artifacts\
+|  |  |  |  + verify\
+|  |  |  |  |  + [token]\
+|  |  |  |  |  |  - route.ts
+|  |  |  + assessment\
+|  |  |  |  + answers\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + questions\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + reopen\
+|  |  |  |  |  - route.ts
+|  |  |  |  + runs\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + migrate-to-latest\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + runner\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + options\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  + submit\
+|  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts.bak_20251021_011321
+|  |  |  |  + templates\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + sections\
+|  |  |  |  |  |  |  + [sectionId]\
+|  |  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + assessment-answers\
+|  |  |  |  + upsert\
+|  |  |  |  |  - route.ts
+|  |  |  + assessment-evidence\
+|  |  |  |  + attach\
+|  |  |  |  |  - route.ts
+|  |  |  |  + detach\
+|  |  |  |  |  - route.ts
+|  |  |  + assessment-runs\
+|  |  |  |  + [id]\
+|  |  |  |  |  + answers\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + delete\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + invite\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + push-score\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + reopen\
+|  |  |  |  |  + review-assignment\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + score\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + submit\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + assessments\
+|  |  |  |  + [id]\
+|  |  |  |  |  + activity\
+|  |  |  |  |  |  + export\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + answers\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + assign\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + complete\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + evidence\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + migrate-to-latest\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + responses\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + run\
+|  |  |  |  |  + score\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + status\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  + export\
+|  |  |  |  |  - route.ts
+|  |  |  |  + migration-candidates\
+|  |  |  |  |  - route.ts
+|  |  |  |  + reopen\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + assessment-templates\
+|  |  |  |  + [id]\
+|  |  |  |  |  + archive\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + audit\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + compare\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + draft\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + draft-from-published\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + new-version\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + publish\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + structure\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + unpublish\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  |  - template-structure-editor.client.tsx
+|  |  |  |  + catalog\
+|  |  |  |  |  + diff\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + install\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + recommend\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + upgrade\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + install\
+|  |  |  |  |  - route.ts
+|  |  |  |  + list\
+|  |  |  |  |  - route.ts
+|  |  |  |  + seed\
+|  |  |  |  |  - route.ts
+|  |  |  |  + seed-structure\
+|  |  |  |  |  - route.ts
+|  |  |  |  + uninstall\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + audit\
+|  |  |  |  + evidence-requests\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  - route.ts
+|  |  |  + auth\
+|  |  |  |  + _DISABLED_nextauth\
+|  |  |  |  |  - route.ts
+|  |  |  |  + diag\
+|  |  |  |  |  - route.ts
+|  |  |  |  + server\
+|  |  |  |  |  - route.ts
+|  |  |  |  + whoami\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + authdebug\
+|  |  |  |  - route.ts
+|  |  |  + billing\
+|  |  |  |  + checkout\
+|  |  |  |  |  - route.ts
+|  |  |  |  + summary\
+|  |  |  |  |  - route.ts
+|  |  |  |  + truvern-credits\
+|  |  |  |  |  + auto-checkout\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + checkout-status\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + stripe\
+|  |  |  |  |  |  + webhook\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + board\
+|  |  |  |  - route.ts
+|  |  |  + board-packet\
+|  |  |  |  + program-state\
+|  |  |  |  |  + seal\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  + seal\
+|  |  |  |  |  + verify\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + snapshot\
+|  |  |  |  |  + seal\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  + verify\
+|  |  |  |  |  - route.ts
+|  |  |  + board-report\
+|  |  |  |  + export\
+|  |  |  |  |  - route.ts
+|  |  |  |  + narrative\
+|  |  |  |  |  - route.ts
+|  |  |  |  + suggest\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + bootstrap\
+|  |  |  |  - route.ts
+|  |  |  + build-seal\
+|  |  |  |  - route.ts
+|  |  |  + contact\
+|  |  |  |  - route.ts
+|  |  |  + contact-lead\
+|  |  |  |  - route.ts
+|  |  |  + cookiedebug\
+|  |  |  |  - route.ts
+|  |  |  + dashboard\
+|  |  |  |  - route.ts
+|  |  |  + debug\
+|  |  |  |  + clerk\
+|  |  |  |  |  - route.ts
+|  |  |  |  + clerk-auth\
+|  |  |  |  |  - route.ts
+|  |  |  |  + env\
+|  |  |  |  |  - route.ts
+|  |  |  |  + whoami\
+|  |  |  |  |  - route.ts
+|  |  |  + dev\
+|  |  |  |  + impersonate\
+|  |  |  |  |  - route.ts
+|  |  |  |  + mint-board-token\
+|  |  |  |  |  - route.ts
+|  |  |  |  + org-plan\
+|  |  |  |  |  - route.ts
+|  |  |  |  + vendors\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + New folder\
+|  |  |  |  |  |  + set-contact-email\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  + diag\
+|  |  |  |  - route.ts
+|  |  |  + envcheck\
+|  |  |  |  - route.ts
+|  |  |  + env-test\
+|  |  |  |  - route.ts
+|  |  |  + evidence\
+|  |  |  |  + [id]\
+|  |  |  |  |  - route.ts
+|  |  |  |  + create\
+|  |  |  |  |  - route.ts
+|  |  |  |  + delete\
+|  |  |  |  |  - route.ts
+|  |  |  |  + export\
+|  |  |  |  |  - route.ts
+|  |  |  |  + list\
+|  |  |  |  |  - route.ts
+|  |  |  |  + request\
+|  |  |  |  |  - route.ts
+|  |  |  |  + upload\
+|  |  |  |  |  - route.ts
+|  |  |  |  + upload-url\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + evidence-ops\
+|  |  |  |  + templates\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + instantiate\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  + evidence-requests\
+|  |  |  |  + [id]\
+|  |  |  |  |  + approve\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + cancel\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + reject\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + reopen\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + review\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + submit\
+|  |  |  |  + new\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - route.ts
+|  |  |  + evidence-templates\
+|  |  |  |  - route.ts
+|  |  |  + health\
+|  |  |  |  + auth\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + invite\
+|  |  |  |  + [token]\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + invites\
+|  |  |  |  + create\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + issue-evidence\
+|  |  |  |  + attach\
+|  |  |  |  |  - route.ts
+|  |  |  |  + detach\
+|  |  |  |  |  - route.ts
+|  |  |  + issues\
+|  |  |  |  + [id]\
+|  |  |  |  |  + accept-risk\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + comment\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + status\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + [issueId]\
+|  |  |  |  |  + status\
+|  |  |  |  + bulk\
+|  |  |  |  |  - route.ts
+|  |  |  |  + export.csv\
+|  |  |  |  |  - route.ts
+|  |  |  |  + unread-count\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + notifications\
+|  |  |  |  + read\
+|  |  |  |  |  - route.ts
+|  |  |  |  + unread-count\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + observe-ping\
+|  |  |  |  - route.ts
+|  |  |  + og\
+|  |  |  |  + [variant]\
+|  |  |  |  |  - route.ts
+|  |  |  |  + snapshot\
+|  |  |  |  |  + create\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + trust\
+|  |  |  |  |  - route.ts
+|  |  |  + og-render\
+|  |  |  |  + board\
+|  |  |  |  |  - route.tsx
+|  |  |  |  + evidence\
+|  |  |  |  |  - route.tsx
+|  |  |  |  + trust\
+|  |  |  |  |  - route.tsx
+|  |  |  + ops\
+|  |  |  |  + clerk-env\
+|  |  |  |  |  - route.ts
+|  |  |  |  + health\
+|  |  |  |  |  - route.ts
+|  |  |  + org\
+|  |  |  |  + evidence-requests\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + review\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  + sync\
+|  |  |  |  |  - route.ts
+|  |  |  + org-memberships\
+|  |  |  |  + [id]\
+|  |  |  |  |  + role\
+|  |  |  |  |  |  - route.ts
+|  |  |  + plan\
+|  |  |  |  - route.ts
+|  |  |  + program-state\
+|  |  |  |  + backfill\
+|  |  |  |  |  - route.ts
+|  |  |  |  + current\
+|  |  |  |  |  - route.ts
+|  |  |  |  + delta\
+|  |  |  |  |  - route.ts
+|  |  |  |  + list\
+|  |  |  |  |  - route.ts
+|  |  |  |  + seal\
+|  |  |  |  |  - route.ts
+|  |  |  |  + status\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + public\
+|  |  |  |  + board-packet\
+|  |  |  |  |  + csv\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + mint\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + pdf\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + verify\
+|  |  |  |  |  |  + [token]\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + og-bytes\
+|  |  |  |  |  - route.ts
+|  |  |  |  + trust-card\
+|  |  |  |  |  - route.ts
+|  |  |  |  + vendor\
+|  |  |  |  |  - route.ts
+|  |  |  + reports\
+|  |  |  |  + board\
+|  |  |  |  |  + csv\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  + portfolio\
+|  |  |  |  |  + export\
+|  |  |  |  |  |  + csv\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  + review-desk\
+|  |  |  |  + assign\
+|  |  |  |  |  - route.ts
+|  |  |  |  + dev-paid-review\
+|  |  |  |  |  - route.ts
+|  |  |  |  + release-assignment\
+|  |  |  |  |  - route.ts
+|  |  |  |  + request-truvern\
+|  |  |  |  |  - route.ts
+|  |  |  |  + reviews\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + outcome\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts
+|  |  |  + reviews\
+|  |  |  |  + [id]\
+|  |  |  |  |  + aggregate\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + assignments\
+|  |  |  |  |  |  + [assignmentId]\
+|  |  |  |  |  |  |  + draft\
+|  |  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  |  + evidence\
+|  |  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  |  + read\
+|  |  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  |  + submit\
+|  |  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + draft\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + finalize\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + results\
+|  |  |  |  |  |  + csv\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + submit\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  + bulk-mint\
+|  |  |  |  |  - route.ts
+|  |  |  |  + from-purchase\
+|  |  |  |  |  - route.ts
+|  |  |  |  + mint\
+|  |  |  |  |  - route.ts
+|  |  |  |  + request\
+|  |  |  |  |  - route.ts
+|  |  |  |  + request-paid\
+|  |  |  |  |  - route.ts
+|  |  |  + risk\
+|  |  |  |  + generate\
+|  |  |  |  |  - route.ts
+|  |  |  + search\
+|  |  |  |  + vendors\
+|  |  |  |  |  - route.ts
+|  |  |  + seed\
+|  |  |  |  + vendors\
+|  |  |  |  |  - route.ts
+|  |  |  + settings\
+|  |  |  |  + evidence-coverage-policy\
+|  |  |  |  |  - route.ts
+|  |  |  |  + truvern-credit-policy\
+|  |  |  |  |  - route.ts
+|  |  |  |  + truvern-credits\
+|  |  |  |  |  + export\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + summary\
+|  |  |  |  |  |  - route.ts
+|  |  |  + signup\
+|  |  |  |  - route.ts
+|  |  |  + sso\
+|  |  |  |  + logout\
+|  |  |  |  |  - route.ts
+|  |  |  |  + saml\
+|  |  |  |  |  + acs\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts.bak
+|  |  |  |  |  |  - route.ts.bak.20251019-230039
+|  |  |  |  |  + metadata\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + status\
+|  |  |  |  + master-seal\
+|  |  |  |  |  - route.ts
+|  |  |  + stripe\
+|  |  |  |  + checkout\
+|  |  |  |  |  - route.ts
+|  |  |  |  + portal\
+|  |  |  |  |  - route.ts
+|  |  |  |  + webhook\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + trust-link\
+|  |  |  |  - route.ts
+|  |  |  + trust-network\
+|  |  |  |  + export\
+|  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts.bak
+|  |  |  |  + mint\
+|  |  |  |  |  - route.ts
+|  |  |  |  + share\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + trust-network-export\
+|  |  |  |  - route.ts
+|  |  |  + truvern\
+|  |  |  |  + ops\
+|  |  |  |  |  + reviews\
+|  |  |  |  |  |  + [id]\
+|  |  |  |  |  |  |  + outcome\
+|  |  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + sla-scan\
+|  |  |  |  |  |  - route.ts
+|  |  |  + uploads\
+|  |  |  |  - route.ts
+|  |  |  + usage\
+|  |  |  |  + summary\
+|  |  |  |  |  - route.disabled.tsx.disabled
+|  |  |  |  |  - route.ts
+|  |  |  |  + track\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + users\
+|  |  |  |  - route.ts
+|  |  |  + vendor\
+|  |  |  |  + evidence-requests\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  + review\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + submit\
+|  |  |  |  |  - route.ts
+|  |  |  |  + runs\
+|  |  |  |  |  + [id]\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  + tasks\
+|  |  |  |  |  - route.ts
+|  |  |  |  + upload-file\
+|  |  |  |  |  - route.ts
+|  |  |  + vendor-assessment\
+|  |  |  |  + [token]\
+|  |  |  |  |  + runs\
+|  |  |  |  |  |  + [runId]\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + save\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + submit\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  |  - vendor-assessment-workspace.client.tsx
+|  |  |  + vendors\
+|  |  |  |  + [id]\
+|  |  |  |  |  + apply-template\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + assessments\
+|  |  |  |  |  |  + apply\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + apply-starter\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + unapply\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + board-packet\
+|  |  |  |  |  |  + csv\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + mint\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + pdf\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + regenerate\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + seal\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + board-report\
+|  |  |  |  |  |  + narrative\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + pdf\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + contact\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + delete\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + evidence\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + evidence-requests\
+|  |  |  |  |  |  + [requestId]\
+|  |  |  |  |  |  |  + fulfill\
+|  |  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + generate-snapshot\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + issues\
+|  |  |  |  |  |  + [issueId]\
+|  |  |  |  |  |  |  + status\
+|  |  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + export.csv\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + metadata\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + og\
+|  |  |  |  |  |  + backfill\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + og-backfill\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + requests\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + reviews\
+|  |  |  |  |  |  + bulk-apply-template\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + create-from-template\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + seal\
+|  |  |  |  |  |  + verify\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + snapshot\
+|  |  |  |  |  |  + regenerate\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  |  + undo\
+|  |  |  |  |  |  |  - route.ts
+|  |  |  |  |  + trust-link\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - route.ts
+|  |  |  |  + create\
+|  |  |  |  |  - route.ts
+|  |  |  |  + list\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  |  - route.ts.bak_20251023_175524
+|  |  |  |  - route.ts.bak_20251023_180015
+|  |  |  + verify\
+|  |  |  |  + [token]\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + webhooks\
+|  |  |  |  + stripe\
+|  |  |  |  |  - route.ts
+|  |  |  + whoami\
+|  |  |  |  - route.ts
+|  |  |  - route.ts
+|  |  + assessment\
+|  |  |  + [id]\
+|  |  |  |  - page.tsx
+|  |  |  + new\
+|  |  |  |  + [id]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + questions\
+|  |  |  |  - page.tsx
+|  |  |  + runs.__bak.20260210_175233\
+|  |  |  |  - page.tsx
+|  |  |  + templates\
+|  |  |  |  + [id]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  - layout.tsx
+|  |  |  - page.tsx
+|  |  + assessments\
+|  |  |  + [id]\
+|  |  + assessment-templates\
+|  |  |  + catalog\
+|  |  + auth\
+|  |  |  + [[...rest]]\
+|  |  |  |  - page.tsx
+|  |  + blog\
+|  |  |  - page.tsx
+|  |  + board-packet\
+|  |  |  + public\
+|  |  |  |  - page.tsx
+|  |  |  + verify\
+|  |  |  |  - copy-button.client.tsx
+|  |  |  |  - page.tsx
+|  |  |  |  - print-button.client.tsx
+|  |  |  |  - qr-code.tsx
+|  |  |  |  - token-box.client.tsx
+|  |  |  - board-packet-seal-actions.client.tsx
+|  |  |  - copy-link-button.client.tsx
+|  |  |  - export-actions.client.tsx
+|  |  |  - page.tsx
+|  |  |  - program-seal-actions.client.tsx
+|  |  |  - seal-button.client.tsx
+|  |  + buyers\
+|  |  + compare\
+|  |  |  - page.tsx
+|  |  + components\
+|  |  |  + assessments\
+|  |  |  |  - assessment-responses-editor.client.tsx
+|  |  |  + board\
+|  |  |  |  - accepted-risk-summary.tsx
+|  |  |  |  - issues-snapshot.tsx
+|  |  |  + New folder\
+|  |  |  + ui\
+|  |  |  |  - CopyAuditLinkButton.tsx
+|  |  |  - assessment-evidence-tab.client.tsx
+|  |  |  - assessment-evidence-tab.tsx
+|  |  |  - CookieConsent.tsx
+|  |  |  - DarkModeToggle.tsx
+|  |  |  - EvidenceDeleteButton.tsx
+|  |  |  - EvidenceTable.tsx
+|  |  |  - Footer.tsx
+|  |  |  - FooterSafe.tsx
+|  |  |  - Hero.tsx
+|  |  |  - issue-evidence-tab.client.tsx
+|  |  |  - JsonLd.tsx
+|  |  |  - MarketingHeader.tsx
+|  |  |  - Navbar.tsx
+|  |  |  - Navbar.tsx.bak_trustnet_20260209_230356
+|  |  |  - notification-bell.client.tsx
+|  |  |  - org-menu.tsx
+|  |  |  - section-nav.client.tsx
+|  |  |  - SiteChrome.tsx
+|  |  |  - TrustHeader.tsx
+|  |  |  - vendor-assessments-panel.tsx
+|  |  |  - vendor-evidence-panel.tsx
+|  |  |  - vendor-issues-panel.tsx
+|  |  |  - vendor-panel-skeleton.tsx
+|  |  |  - vendor-requests-panel.tsx
+|  |  + contact\
+|  |  |  - page.tsx.20251108-190949.bak
+|  |  + debug\
+|  |  |  + clerk\
+|  |  |  |  - page.tsx
+|  |  + directory\
+|  |  |  - page.tsx
+|  |  + docs\
+|  |  |  - page.tsx
+|  |  + features\
+|  |  + help\
+|  |  |  + evidence\
+|  |  |  |  - page.tsx
+|  |  |  + getting-started\
+|  |  |  |  - page.tsx
+|  |  |  + review-desk\
+|  |  |  |  - page.tsx
+|  |  |  + vendor-assessments\
+|  |  |  |  - page.tsx
+|  |  |  - help-center.client.tsx
+|  |  |  - page.tsx
+|  |  + home-safe\
+|  |  |  - HomeClient.tsx
+|  |  + invite\
+|  |  |  + [token]\
+|  |  |  |  - page.tsx
+|  |  + legal\
+|  |  |  + cookies\
+|  |  |  |  - page.tsx
+|  |  |  + dpa\
+|  |  |  |  - page.tsx
+|  |  |  + privacy\
+|  |  |  |  - page.tsx
+|  |  |  + security\
+|  |  |  |  - page.tsx
+|  |  |  + subprocessors\
+|  |  |  |  - page.tsx
+|  |  |  + terms\
+|  |  |  |  - page.tsx
+|  |  + lib\
+|  |  |  + data\
+|  |  |  |  - vendors.ts
+|  |  |  - logger.ts
+|  |  |  - prisma.ts
+|  |  |  - safe.ts
+|  |  |  - vendors.ts
+|  |  + login\
+|  |  |  - page.tsx
+|  |  + New folder\
+|  |  + onboarding\
+|  |  |  + welcome\
+|  |  |  |  - page.tsx
+|  |  |  - page.tsx
+|  |  + ops\
+|  |  |  + health\
+|  |  |  |  + master-seal-badge\
+|  |  |  |  |  - route.ts
+|  |  |  |  - page.tsx
+|  |  + org\
+|  |  |  + evidence-requests\
+|  |  |  |  + [id]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  - page.tsx
+|  |  |  + new\
+|  |  |  |  - CreateOrgButton.tsx
+|  |  |  |  - page.tsx
+|  |  + org-select\
+|  |  + pricing.disabled\
+|  |  |  - page.tsx
+|  |  + public\
+|  |  |  + board\
+|  |  |  |  + [token]\
+|  |  |  |  |  + export.csv\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + export.pdf\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  - page.tsx
+|  |  + reports\
+|  |  |  + board\
+|  |  |  |  + preview\
+|  |  |  |  |  - page.tsx.20251108-192310.bak
+|  |  |  |  |  - page.tsx.20251108-192446.bak
+|  |  |  |  |  - route.ts
+|  |  |  |  - layout.tsx
+|  |  |  |  - page.tsx
+|  |  |  |  - page.tsx.20251108-190423.bak
+|  |  |  |  - page.tsx.bak-20251115-223818
+|  |  |  |  - page.tsx.bak-20251116-182748
+|  |  |  |  - route.ts.bak-phase64
+|  |  |  + portfolio\
+|  |  |  |  - page.tsx
+|  |  |  - page.tsx
+|  |  + security\
+|  |  |  - page.tsx
+|  |  + select-org\
+|  |  |  - page.tsx
+|  |  + sign-in\
+|  |  |  + [[...sign-in]]\
+|  |  |  |  - page.tsx
+|  |  |  |  - sign-in.client.tsx
+|  |  |  |  - sign-in-shell.client.tsx
+|  |  + sign-out\
+|  |  |  - page.tsx
+|  |  + signup\
+|  |  |  - page.tsx
+|  |  + sign-up\
+|  |  |  + [[...sign-up]]\
+|  |  |  |  - page.tsx
+|  |  |  |  - sign-up.client.tsx
+|  |  + sso\
+|  |  |  - page.tsx
+|  |  |  - page.tsx.bak
+|  |  + subscribe\
+|  |  |  - page.tsx
+|  |  |  - page.tsx.20251108-190013.bak
+|  |  + trust\
+|  |  |  + [slug]\
+|  |  |  |  - page.tsx
+|  |  |  |  - trust_copy_buttons_client.tsx
+|  |  |  |  - verify-integrity-button.client.tsx
+|  |  |  + embed\
+|  |  |  |  - page.tsx.20251108-191209.bak
+|  |  |  |  - route.ts
+|  |  |  + id\
+|  |  |  - layout.tsx
+|  |  |  - page.tsx
+|  |  |  - page.tsx.20251108-193939.bak
+|  |  |  - page.tsx.bak_20251023_172446
+|  |  + trust-network\
+|  |  |  + public\
+|  |  |  |  - copy-link-button.client.tsx
+|  |  |  |  - copy-text-button.client.tsx
+|  |  |  |  - page.tsx
+|  |  + truvern\
+|  |  |  + login\
+|  |  |  |  - page.tsx
+|  |  |  - page.tsx
+|  |  + upgrade\
+|  |  |  - page.tsx
+|  |  + vendor\
+|  |  |  + assessment\
+|  |  |  |  + [token]\
+|  |  |  |  |  - page.tsx
+|  |  |  + upload-file\
+|  |  |  |  - page.tsx.20251108-190711.bak
+|  |  |  |  - route.ts
+|  |  |  - page.tsx
+|  |  |  - page.tsx.bak-20251115-233857
+|  |  + vendor-assessment\
+|  |  |  + [token]\
+|  |  |  |  - page.tsx
+|  |  |  |  - vendor-assessment-workspace.client.tsx
+|  |  + vendor-evidence\
+|  |  |  + [token]\
+|  |  |  |  - page.tsx
+|  |  |  |  - vendor-evidence-workspace.client.tsx
+|  |  + vendor-portal\
+|  |  |  + evidence-requests\
+|  |  |  |  + [id]\
+|  |  |  |  |  + submit\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  + timeline\
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  |  |  - upload-panel.client.tsx
+|  |  |  |  - page.tsx
+|  |  |  + runs\
+|  |  |  |  + [id]\
+|  |  |  |  |  - page.tsx
+|  |  |  |  |  - vendor-run-workspace.client.tsx
+|  |  |  - layout.tsx
+|  |  |  - page.tsx
+|  |  |  - page.tsx.BAK
+|  |  + vendors\
+|  |  |  + [id]\
+|  |  |  |  + board-packet\
+|  |  |  |  |  + export.csv\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + print\
+|  |  |  |  |  |  - layout.tsx
+|  |  |  |  |  |  - page.tsx
+|  |  |  |  |  |  - print-actions.client.tsx
+|  |  |  |  |  |  - print-button.client.tsx
+|  |  |  |  |  |  - PrintButton.tsx
+|  |  |  |  |  |  - print-shell.client.tsx
+|  |  |  |  |  - board-packet-actions.client.tsx
+|  |  |  |  |  - page.tsx
+|  |  |  |  + evidence-requests\
+|  |  |  |  |  + [requestId]\
+|  |  + verify\
+|  |  |  + [token]\
+|  |  |  |  - page.tsx
+|  |  |  + packet\
+|  |  |  |  + [token]\
+|  |  |  |  |  - page.tsx
+|  |  - _DISABLED_clerk-provider.tsx
+|  |  - _DISABLED_client-providers.tsx
+|  |  - 404.tsx
+|  |  - api (2).zip
+|  |  - api (3).zip
+|  |  - api.zip
+|  |  - apple-icon.tsx
+|  |  - app-shell.tsx
+|  |  - chrome-gate.client.tsx
+|  |  - env-check.ts
+|  |  - error.tsx
+|  |  - global-error.tsx
+|  |  - globals.css
+|  |  - globals.css.bak-20251128
+|  |  - globals.css.bak-phase136b
+|  |  - head.tsx
+|  |  - headers.tsx
+|  |  - icon.tsx
+|  |  - instrumentation-client.ts
+|  |  - layout.backup.tsx.disabled
+|  |  - layout.tsx
+|  |  - layout.tsx.bak
+|  |  - layout.tsx.bak_20251023_084049
+|  |  - layout.tsx.bak-phase80
+|  |  - layout.tsx.phase148_backup
+|  |  - layout.tsx.phase148a.bak
+|  |  - loading.tsx
+|  |  - manifest.ts
+|  |  - metadata.ts
+|  |  - not-found.tsx
+|  |  - not-found.tsx.20251108-194346.bak
+|  |  - page.tsx.20251108-185303.bak
+|  |  - page.tsx.bak
+|  |  - providers.tsx
+|  |  - robots.ts
+|  |  - sitemap.ts
+|  + app._park\
+|  |  + og-image\
+|  |  |  + [id]\
+|  |  |  |  - route.ts
+|  |  + reports-portfolio-export-pdf\
+|  |  |  - route.tsx
+|  |  + risk-snapshots\
+|  |  |  + compute-score\
+|  |  |  |  + compute-scores-bulk\
+|  |  |  |  |  - route.ts
+|  |  |  |  - route.ts
+|  |  |  + generate\
+|  |  |  |  - route.ts
+|  |  |  + list\
+|  |  |  |  - route.ts
+|  |  |  + regenerate\
+|  |  |  |  - route.ts
+|  |  |  + undo\
+|  |  |  |  - route.ts
+|  |  + trust\
+|  |  |  + [slug]\
+|  |  |  |  - route.ts
+|  |  |  + badge\
+|  |  |  |  - route.ts
+|  |  |  + list\
+|  |  |  |  - route.ts
+|  |  |  + snapshots\
+|  |  |  |  + [vendorId]\
+|  |  |  |  |  + generate\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + regenerate\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  |  + undo\
+|  |  |  |  |  |  - route.ts
+|  |  |  |  + generate\
+|  |  |  |  |  - route.ts
+|  |  |  + toggle\
+|  |  |  |  - route.ts
+|  |  |  + verify\
+|  |  |  |  - route.ts
+|  |  |  - route.ts
+|  |  + vendor-portal\
+|  |  |  + assessment-answers\
+|  |  |  |  - route.ts
+|  |  |  + auto-link\
+|  |  |  |  - route.ts
+|  |  |  + bootstrap\
+|  |  |  |  - route.ts
+|  |  |  + evidence-requests\
+|  |  |  |  + [id]\
+|  |  |  |  |  + submit\
+|  |  |  |  |  |  - route.ts
+|  |  |  + summary\
+|  |  |  |  - route.ts
+|  |  |  + upload\
+|  |  |  |  - route.ts
+|  + artifacts\
+|  |  + phase136-20251111-221809\
+|  |  |  - board-20251111-221809.html
+|  |  + phase137-20251111-222058\
+|  |  + phase137-20251111-222304\
+|  |  + phase137b-20251111-222550\
+|  |  + phase141-20251111-223728\
+|  |  + phase145-20251111-233536\
+|  |  + phase154-20251112-211111\
+|  |  |  - html_.full.html
+|  |  |  - html_.head.html
+|  |  |  - html_dashboard_evidence.full.html
+|  |  |  - html_dashboard_evidence.head.html
+|  |  |  - html_reports_board.full.html
+|  |  |  - html_reports_board.head.html
+|  |  |  - html_trust-network.full.html
+|  |  |  - html_trust-network.head.html
+|  |  |  - html_vendors.full.html
+|  |  |  - html_vendors.head.html
+|  |  + phase155-20251112-213721\
+|  + build_logs\
+|  + components\
+|  |  + admin\
+|  |  |  - evidence-request-review-actions.tsx
+|  |  |  - reopen-evidence-request-button.tsx
+|  |  + app\
+|  |  |  - app-shell-nav.client.tsx
+|  |  + artifacts\
+|  |  |  - IntegrityBanner.client.tsx
+|  |  + assessments\
+|  |  |  - assessment-evidence-panel.client.tsx
+|  |  |  - assessment-responses-editor.client.tsx
+|  |  |  - audit-copy-details-button.client.tsx
+|  |  |  - mark-complete-button.client.tsx
+|  |  |  - template-multi-select.client.tsx
+|  |  |  - template-picker.client.tsx
+|  |  + auth\
+|  |  |  - auth-diagnostics.tsx
+|  |  |  - auth-form-frame.tsx
+|  |  |  - auth-layout.tsx
+|  |  |  - auth-loading-card.tsx
+|  |  |  - redirect-when-signed-in.client.tsx
+|  |  |  - sign-in-client.tsx
+|  |  + billing\
+|  |  |  - resume-assign-after-checkout.client.tsx
+|  |  |  - safe-checkout-provider.client.tsx
+|  |  + board\
+|  |  |  - board-packet-auto-print.client.tsx
+|  |  |  - board-packet-export-print.client.tsx
+|  |  |  - clear-created-param.client.tsx
+|  |  |  - copy-link.client.tsx
+|  |  |  - copy-public-board-packet-link.client.tsx
+|  |  |  - copy-public-board-packet-link-button.client.tsx
+|  |  |  - export-csv-button.client.tsx
+|  |  |  - export-pdf-button.client.tsx
+|  |  |  - issues-snapshot.tsx
+|  |  |  - portfolio-risk-panel.tsx
+|  |  |  - print-button.client.tsx
+|  |  |  - print-pdf-button.tsx
+|  |  |  - print-save-pdf-button.client.tsx
+|  |  |  - risk-delta-badge.tsx
+|  |  |  - vendor-board-packet.server.tsx
+|  |  + board-packet\
+|  |  |  - board-packet-evidence-section.tsx
+|  |  |  - portfolio-concentration.tsx
+|  |  |  - seal-board-packet-button.client.tsx
+|  |  + brand\
+|  |  |  - TruvernBrand.tsx
+|  |  + evidence\
+|  |  |  - evidence-request-aging-badge.tsx
+|  |  |  - evidence-review-actions.tsx
+|  |  |  - request-evidence-button.client.tsx
+|  |  + evidence-requests\
+|  |  |  - evidence-request-review-actions.tsx
+|  |  + integrity\
+|  |  |  - IntegritySeal.tsx
+|  |  + issues\
+|  |  |  - accepted-meta-badge.client.tsx
+|  |  |  - accepted-risk-note.client.tsx
+|  |  |  - accept-risk-button.client.tsx
+|  |  |  - unaccept-risk-button.client.tsx
+|  |  + layout\
+|  |  |  - workspace-sidebar.tsx
+|  |  + marketing\
+|  |  + navigation\
+|  |  |  - review-desk-nav-link.tsx
+|  |  + notifications\
+|  |  |  - notification-bell.client.tsx
+|  |  + og\
+|  |  |  - OgSharePanel.tsx
+|  |  + print\
+|  |  |  - PrintButton.tsx
+|  |  + providers\
+|  |  |  - Session.tsx
+|  |  + public\
+|  |  |  - copy-text-button.client.tsx
+|  |  + review-desk\
+|  |  |  - assign-internal-modal.client.tsx
+|  |  |  - request-truvern-modal.client.tsx
+|  |  |  - request-truvern-page.client.tsx
+|  |  |  - review-action-panel.client.tsx
+|  |  |  - review-assignment-panel.client.tsx
+|  |  |  - review-badges.tsx
+|  |  |  - review-desk-card.tsx
+|  |  |  - review-desk-header.tsx
+|  |  |  - review-findings-panel.client.tsx
+|  |  |  - review-queue-inline-actions.client.tsx
+|  |  |  - timeline-panel.client.tsx
+|  |  |  - truvern-credits-chip.tsx
+|  |  + risk\
+|  |  |  - risk-popover.tsx
+|  |  + select-org\
+|  |  |  - select-org-client.tsx
+|  |  + settings\
+|  |  |  - evidence-coverage-policy-editor.client.tsx
+|  |  |  - truvern-credit-checkout-button.client.tsx
+|  |  |  - truvern-credit-pack-selector.client.tsx
+|  |  |  - truvern-credit-policy-form.client.tsx
+|  |  |  - truvern-credit-purchase-panel.client.tsx
+|  |  + site\
+|  |  |  - AuthButtons.tsx
+|  |  |  - Comparison.tsx
+|  |  |  - CTA.tsx
+|  |  |  - Footer.tsx
+|  |  |  - i18nSafe.ts
+|  |  |  - LanguageSwitcher.tsx
+|  |  |  - Logos.tsx
+|  |  |  - SiteFooter.tsx
+|  |  |  - SiteNav.tsx
+|  |  + trust\
+|  |  |  - bulk-generate-snapshots-button.tsx
+|  |  |  - copy-link-button.client.tsx
+|  |  |  - copy-public-link.tsx
+|  |  |  - generate-snapshot-button.tsx
+|  |  |  - inline-actions-client.tsx
+|  |  |  - share-menu.tsx
+|  |  |  - share-public-board-link-button.client.tsx
+|  |  |  - snapshot-actions-button.tsx
+|  |  |  - snapshot-integrity-pill.tsx
+|  |  |  - trust-network-bulk-controls.tsx
+|  |  |  - trust-network-filters-client.tsx
+|  |  |  - trust-network-row-actions.tsx
+|  |  |  - trust-og-preview.tsx
+|  |  |  - trust-posture.tsx
+|  |  |  - trust-snapshot-img-client.tsx
+|  |  |  - trust-verification-badge.tsx
+|  |  |  - VendorCard.tsx
+|  |  |  - VendorCard.tsx.bak_20251023_174403
+|  |  + trust-network\
+|  |  |  - copy-link-button.client.tsx
+|  |  + ui\
+|  |  |  - Badge.tsx
+|  |  |  - Button.tsx
+|  |  |  - Card.tsx
+|  |  |  - hover-tooltip.client.tsx
+|  |  |  - panel.tsx
+|  |  |  - pill.tsx
+|  |  |  - Title.tsx
+|  |  |  - toast.tsx
+|  |  + vendor-portal\
+|  |  |  - evidence-request-submit-panel.client.tsx
+|  |  |  - vendor-evidence-submit-client.tsx
+|  |  |  - vendor-portal-dashboard.tsx
+|  |  + vendors\
+|  |  |  - board-packet-regenerate-button.tsx
+|  |  |  - generate-risk-form.client.tsx
+|  |  |  - og-share-card-client.tsx
+|  |  |  - print-button.client.tsx
+|  |  |  - request-evidence-button.client.tsx
+|  |  |  - seal-vendor-button.tsx
+|  |  |  - trust-link-card-client.tsx
+|  |  |  - vendor-actionability-328a.tsx
+|  |  |  - vendor-artifacts-actions-client.tsx
+|  |  |  - vendor-assessments-list.client.tsx
+|  |  |  - vendor-contact-panel.client.tsx
+|  |  |  - vendor-counts-card.tsx
+|  |  |  - vendor-evidence-list.tsx
+|  |  |  - vendor-evidence-rollup.tsx
+|  |  |  - vendor-issues-list.client.tsx
+|  |  |  - vendor-lifecycle-header-client.tsx
+|  |  |  - vendor-requests-list.client.tsx
+|  |  |  - vendor-requests-list.tsx
+|  |  |  - vendor-requests-panel.tsx
+|  |  |  - vendor-risk-panel.tsx
+|  |  |  - vendor-risk-snapshot.tsx
+|  |  |  - vendor-seal-button.tsx
+|  |  |  - vendor-seal-panel-client.tsx
+|  |  |  - vendors-risk-table.tsx
+|  |  |  - vendors-table-client.tsx
+|  |  |  - vendor-state-header.tsx
+|  |  |  - vendor-status-card.tsx
+|  |  |  - vendor-tab-memory.client.tsx
+|  |  |  - vendor-tab-ready-signal.client.tsx
+|  |  |  - vendor-tab-scroll-memory.client.tsx
+|  |  + verification\
+|  |  |  - print-verification-button.client.tsx
+|  |  |  - public-verify-link.tsx
+|  |  |  - verification-shared.tsx
+|  |  - activity-feed-panel.tsx
+|  |  - assessment-breadcrumbs.tsx
+|  |  - assessment-run-editor.tsx
+|  |  - assessment-runner.tsx
+|  |  - assessment-run-responder.tsx
+|  |  - assessment-start-chooser.tsx
+|  |  - assessment-subnav.tsx
+|  |  - assessment-template-manager.tsx
+|  |  - BoardKPISection.tsx
+|  |  - board-packet-cta.tsx
+|  |  - board-report-print-button.tsx
+|  |  - Button.tsx
+|  |  - command-palette.tsx
+|  |  - evidence-request-form.tsx
+|  |  - evidence-request-review-panel.tsx
+|  |  - evidence-request-status-badge.tsx
+|  |  - Footer.tsx
+|  |  - IntegrityHeroStrip.tsx
+|  |  - IntegrityStatusBadge.tsx
+|  |  - issue-actions.tsx
+|  |  - issue-comment-box.tsx
+|  |  - issue-detail-client.tsx
+|  |  - issue-inbox-table.tsx
+|  |  - issues-inbox.tsx
+|  |  - KPIStat.tsx
+|  |  - legal-help-shell.tsx
+|  |  - master-seal-badge.tsx
+|  |  - new-vendor-form.tsx
+|  |  - org-evidence-request-review-panel.tsx
+|  |  - org-menu.tsx
+|  |  - org-required.tsx
+|  |  - org-sync-button.tsx
+|  |  - reopen-assessment-button.tsx
+|  |  - sign-in-client.tsx
+|  |  - SiteChrome.tsx
+|  |  - TrendBar.tsx
+|  |  - trust-network-client.tsx
+|  |  - trust-network-client.tsx.bak
+|  |  - trust-profile-actions.tsx
+|  |  - truvern-integrity-seal.tsx
+|  |  - UsageBadges.tsx
+|  |  - vendor-archive-toggle.tsx
+|  |  - vendor-assessment-run-client.tsx
+|  |  - vendor-assessments-panel.tsx
+|  |  - vendor-edit-form.tsx
+|  |  - vendor-evidence-panel.tsx
+|  |  - vendor-evidence-requests-panel.tsx
+|  |  - vendor-evidence-request-submit.tsx
+|  |  - vendor-evidence-timeline.tsx
+|  |  - vendor-findings-panel.tsx
+|  |  - vendor-issues-panel.tsx
+|  |  - vendor-metadata-form.tsx
+|  |  - vendor-portfolio-dashboard.tsx
+|  |  - vendors-client.tsx
+|  |  - vendors-page-client.tsx
+|  |  - vendor-trust-link-button.tsx
+|  |  - vendor-workspace-actions.tsx
+|  + db_backups\
+|  |  - neondb_prod_20251016_121020.sql
+|  + deploy_logs\
+|  + lib\
+|  |  + api\
+|  |  |  - route-helpers.ts
+|  |  + auth\
+|  |  |  - resolveVendorContext.ts
+|  |  |  - sign-in-intent.ts
+|  |  + billing\
+|  |  |  - notifications.ts
+|  |  |  - plan.ts
+|  |  |  - require-feature.ts
+|  |  |  - stripe-mode.ts
+|  |  |  - subscription-renewal.ts
+|  |  |  - subscription-state.ts
+|  |  + board\
+|  |  |  - immutability.ts
+|  |  + board-packet\
+|  |  |  - packet-seal.ts
+|  |  |  - snapshot-compare.ts
+|  |  + board-report\
+|  |  |  - suggest-key-risks.ts
+|  |  + client\
+|  |  |  - truvern-credit-checkout.ts
+|  |  + db\
+|  |  |  - index.ts
+|  |  + i18n\
+|  |  |  - client.tsx
+|  |  |  - index.ts
+|  |  |  - Provider.tsx
+|  |  |  - server.ts
+|  |  + notifications\
+|  |  |  - builders.ts
+|  |  |  - create-many-notifications.ts
+|  |  |  - create-notification.ts
+|  |  + og\
+|  |  |  - generateVendorOg.ts
+|  |  |  - og-shared.ts
+|  |  |  - payload.ts
+|  |  |  - render.tsx
+|  |  + portfolio\
+|  |  |  - concentration.ts
+|  |  + review-desk\
+|  |  |  - access.ts
+|  |  + risk\
+|  |  |  - vendor-risk.ts
+|  |  + seals\
+|  |  |  - board-packet-seal.ts
+|  |  |  - program-state-seal.ts
+|  |  |  - vendor-seal.ts
+|  |  + trust\
+|  |  |  - vendor-trust.ts
+|  |  + verification\
+|  |  |  - normalize.ts
+|  |  |  - resolve-public-seal.ts
+|  |  |  - types.ts
+|  |  |  - verify-board-packet-token.ts
+|  |  |  - verify-program-state-token.ts
+|  |  - activity-feed.ts
+|  |  - activity-log.ts
+|  |  - actor.ts
+|  |  - api-helpers.ts
+|  |  - assessment-evidence-link.ts
+|  |  - assessment-preview-score.ts
+|  |  - assessment-scoring.ts
+|  |  - assessment-template-catalog.ts
+|  |  - assessment-utils.ts
+|  |  - audit.ts
+|  |  - auth.ts
+|  |  - auth.ts.bak
+|  |  - auth-with-modal.ts
+|  |  - billing.ts
+|  |  - board-packet-seal.ts
+|  |  - board-share.ts
+|  |  - currency.ts
+|  |  - current-org.ts
+|  |  - db.ts
+|  |  - db.ts.bak_20251021_011321
+|  |  - db.ts.bak_20251021_012030
+|  |  - db-org.ts
+|  |  - dev-crash-logger.ts
+|  |  - email.ts
+|  |  - evidence-request-aging.ts
+|  |  - framework-crosswalk.ts
+|  |  - getDbOrg.ts
+|  |  - get-db-org.ts
+|  |  - guards.ts
+|  |  - integrity.ts
+|  |  - invite.ts
+|  |  - issue-sla.ts
+|  |  - next-errors.ts
+|  |  - notifications.ts
+|  |  - notify.ts
+|  |  - org-auth.ts
+|  |  - orgContext.ts
+|  |  - org-db.server.ts
+|  |  - org-db.ts
+|  |  - org-guard.ts
+|  |  - plan.ts
+|  |  - prisma.ts
+|  |  - prisma-delegates.ts
+|  |  - program-state.ts
+|  |  - pro-guard.ts
+|  |  - pro-required.ts
+|  |  - public-board-token.ts
+|  |  - qr.ts
+|  |  - r2.ts
+|  |  - ratelimit.ts
+|  |  - require-org.ts
+|  |  - safeRepeat.ts
+|  |  - scoring.ts
+|  |  - seal.ts
+|  |  - stable-json.ts
+|  |  - stripe.ts
+|  |  - template-catalog-presets.ts
+|  |  - trust.ts
+|  |  - trust-network-token.ts
+|  |  - truvern-credit-presenter.ts
+|  |  - truvern-credits.ts
+|  |  - truvern-credits-server.ts
+|  |  - truvern-ops-access.ts
+|  |  - truvern-ops-metrics.ts
+|  |  - truvern-ops-sla.ts
+|  |  - typed.ts
+|  |  - types.ts
+|  |  - vendor-assessment-invite.ts
+|  |  - vendor-health-sync.ts
+|  |  - vendor-seal.ts
+|  + logs\
+|  |  + deploys\
+|  |  + monitoring\
+|  |  |  - daily-summary-20251029.txt
+|  |  |  - weekly-summary-2025-ww.txt
+|  |  + phase10\
+|  |  |  - deploygate-report.txt
+|  |  |  - quickcheck-report.txt
+|  |  + phase11\
+|  |  + phase14\
+|  |  + phase16\
+|  |  + phase17\
+|  |  + phase18\
+|  |  + phase18-rev2\
+|  |  + phase18-rev3\
+|  |  + phase19rev2\
+|  |  + phase20-stallbuster\
+|  |  + phase21\
+|  |  |  - transcript-20251031-162707.txt
+|  |  + phase22\
+|  |  + phase22r2\
+|  |  |  - transcript-20251031-170507.txt
+|  |  + phase22rev3\
+|  |  |  - transcript-20251031-192131.txt
+|  |  |  - transcript-20251031-212836.txt
+|  |  |  - transcript-20251031-213735.txt
+|  |  |  - transcript-20251031-214411.txt
+|  |  |  - transcript-20251031-214605.txt
+|  |  + phase22rev4\
+|  |  |  - transcript-20251031-214852.txt
+|  |  + phase22rev5\
+|  |  + phase22rev5-lite\
+|  |  + phase23\
+|  |  + phase24\
+|  |  + phase33\
+|  |  + ship\
+|  |  - board-20251109-181023.png
+|  |  - board-20251110-210213.png
+|  |  - phase121r3-prisma-20251109-165501.txt
+|  |  - phase122k-build.txt
+|  |  - phase122k-prisma.txt
+|  |  - phase122l-build.txt
+|  |  - phase122m-build.txt
+|  |  - phase122n-build.txt
+|  |  - phase122o-build.txt
+|  |  - phase123c-build-20251110-225640.txt
+|  |  - phase123c-build-20251110-230543.txt
+|  |  - phase123d-deploy-20251110-231333.txt
+|  |  - phase124d-deploy-20251111-001849.txt
+|  |  - phase126b-link-20251111-022502.txt
+|  |  - Phase189-ProjectReadiness-2025-12-04_14-02-12.md
+|  |  - Phase189-ProjectReadiness-2025-12-04_14-09-22.md
+|  |  - Phase190-ProdLaunchReadiness-2025-12-04_14-34-31.md
+|  |  - Phase190-ProdLaunchReadiness-2025-12-04_14-34-38.md
+|  |  - Phase190-ProdLaunchReadiness-2025-12-04_14-34-56.md
+|  |  - Phase190-ProdLaunchReadiness-2025-12-04_15-19-11.md
+|  |  - Phase190-ProdLaunchReadiness-2025-12-04_15-21-29.md
+|  |  - Phase190-ProdLaunchReadiness-2025-12-04_15-32-21.md
+|  |  - Phase190-ProdLaunchReadiness-2025-12-04_15-43-49.md
+|  |  - Phase190-ProdLaunchReadiness-2025-12-04_15-52-24.md
+|  |  - Phase200-TruvernMasterSeal.md
+|  |  - Phase93-deploy-20251107-180942.txt
+|  |  - Phase93-run-20251107_183642.log  rem scrub spaces in timestamp
+|  |  - phase-fixnames-20251102-212504.txt
+|  |  - PhaseScan-Post98-20251108-212827.txt
+|  |  - pnpm-build-20251109-203152.txt
+|  |  - pnpm-build-20251109-203513.txt
+|  |  - pnpm-build-20251109-203916.txt
+|  |  - route-public-verify-20251110-232406.txt
+|  |  - route-verify-20251109-172745.txt
+|  |  - route-verify-20251109-173548.txt
+|  |  - route-verify-20251109-180030.txt
+|  |  - route-verify-20251109-180313.txt
+|  |  - route-verify-20251109-180521.txt
+|  |  - route-verify-20251109-181023.txt
+|  |  - route-verify-20251110-200238.txt
+|  |  - route-verify-20251110-201036.txt
+|  |  - route-verify-20251110-205741.txt
+|  |  - route-verify-20251110-210213.txt
+|  |  - route-verify-20251110-231333.txt
+|  |  - snapshot-20251110-223132.zip
+|  |  - snapshot-20251110-223645.zip
+|  |  - transcript-20251109-200257.txt
+|  |  - transcript-20251109-200950.txt
+|  |  - transcript-20251110-215005.txt
+|  |  - vercel-deploy-20251109-171921.txt
+|  |  - vercel-deploy-20251109-172320.txt
+|  |  - vercel-deploy-20251109-172731.txt
+|  |  - vercel-deploy-20251109-173040.txt
+|  |  - vercel-deploy-20251109-173327.txt
+|  |  - vercel-deploy-20251109-173539.txt
+|  |  - vercel-deploy-20251109-180020.txt
+|  |  - vercel-deploy-20251109-195419.txt
+|  |  - vercel-deploy-20251109-200950.txt
+|  |  - vercel-deploy-20251110-205741.txt
+|  |  - vercel-ls-prod.json
+|  |  - vercel-version-20251111-022502.txt
+|  |  - vercel-whoami-20251111-022502.txt
+|  + monitoring\
+|  |  - UptimeCheck.ps1
+|  |  - UptimeCheck.Scheduled.ps1
+|  |  - UptimeDailySummary.ps1
+|  |  - UptimeWeeklySummary.ps1
+|  + prisma\
+|  |  + migrations\
+|  |  |  + 00000000000000_baseline\
+|  |  |  |  - migration.sql
+|  |  |  + 20260106203609_baseline\
+|  |  |  |  - migration.sql
+|  |  |  + 20260107140110_baseline\
+|  |  |  |  - migration.sql
+|  |  |  + 20260107184431_evidence_request_title\
+|  |  |  |  - migration.sql
+|  |  |  + 20260109201746_assessment_responses_json\
+|  |  |  |  - migration.sql
+|  |  |  + 20260111000620_add_vendor_risk_snapshot\
+|  |  |  |  - migration.sql
+|  |  |  + 20260111014424_vendor_risk_snapshot_org_backrelation\
+|  |  |  |  - migration.sql
+|  |  |  + 20260111030426_add_assessment_to_issue\
+|  |  |  |  - migration.sql
+|  |  |  + 20260111060705_add_evidence_coverage_policy\
+|  |  |  |  - migration.sql
+|  |  |  + 20260111213144_evidence_document_freshness\
+|  |  |  |  - migration.sql
+|  |  |  + 20260112053116_risk_snapshots\
+|  |  |  |  - migration.sql
+|  |  |  + 20260113045919_add_stripe_billing_fields\
+|  |  |  |  - migration.sql
+|  |  |  + 20260115052536_add_og_and_evidence_request_templates_iterations\
+|  |  |  |  - migration.sql
+|  |  |  + 20260115053612_evidence_request_link_on_evidence\
+|  |  |  |  - migration.sql
+|  |  |  + 20260116020019_issue_accepted_risk\
+|  |  |  |  - migration.sql
+|  |  |  + 20260117042550_vendor_risk_snapshot_seal_fields\
+|  |  |  |  - migration.sql
+|  |  |  + 20260118061833_stripe_event_log\
+|  |  |  |  - migration.sql
+|  |  |  + 20260118235432_add_clerk_user_id_to_user\
+|  |  |  |  - migration.sql
+|  |  |  + 20260119012117_add_assessment_run\
+|  |  |  |  - migration.sql
+|  |  |  + 20260119013940_add_assessment_run_and_submission_fields\
+|  |  |  |  - migration.sql
+|  |  |  + 20260119023230_add_assessment_completion_fields\
+|  |  |  |  - migration.sql
+|  |  |  + 20260119033151_add_evidence_request_templates\
+|  |  |  |  - migration.sql
+|  |  |  + 20260121010823_add_review_requests\
+|  |  |  |  - migration.sql
+|  |  |  + 20260121015637_per_reviewer_review_responses\
+|  |  |  |  - migration.sql
+|  |  |  + 20260123070028_p260_assessment_templates\
+|  |  |  |  - migration.sql
+|  |  |  + 20260123074330_p260_assessment_template_catalog\
+|  |  |  |  - migration.sql
+|  |  |  + 20260124012125_template_catalog_metadata\
+|  |  |  |  - migration.sql
+|  |  |  + 20260124223649_review_purchase\
+|  |  |  |  - migration.sql
+|  |  |  + 20260125222254_vendor_applied_assessment\
+|  |  |  |  - migration.sql
+|  |  |  + 20260125231558_vendor_multi_applied_assessments\
+|  |  |  |  - migration.sql
+|  |  |  + 20260128071449_add_review_evidence_links\
+|  |  |  |  - migration.sql
+|  |  |  + 20260128225437_add_review_finalized_status\
+|  |  |  |  - migration.sql
+|  |  |  + 20260213045047_assessment_due_at_recipient_emails\
+|  |  |  |  - migration.sql
+|  |  |  + 20260216050432_vendor_assessment_invite_tokens\
+|  |  |  |  - migration.sql
+|  |  |  + 20260216054433_vendor_assessment_invite_tokens\
+|  |  |  |  - migration.sql
+|  |  |  + 20260219014528_score_float_and_sealhash_indexes\
+|  |  |  |  - migration.sql
+|  |  |  + 20260219034500_add_vendor_materiality\
+|  |  |  |  - migration.sql
+|  |  |  + 20260220024017_add_program_state\
+|  |  |  |  - migration.sql
+|  |  |  + 20260221021649_program_state_ledger_fix\
+|  |  |  |  - migration.sql
+|  |  |  + 20260221225529_vendor_seal_payload\
+|  |  |  |  - migration.sql
+|  |  |  + 20260222010546_add_board_packet_seal_public_token\
+|  |  |  |  - migration.sql
+|  |  |  + 20260227030815_pre_program_state_seal_upgrade_check\
+|  |  |  |  - migration.sql
+|  |  |  + 20260227031253_add_program_state_seal_supersede_fields\
+|  |  |  |  - migration.sql
+|  |  |  + 20260228092551_subscription_unique_orgid\
+|  |  |  |  - migration.sql
+|  |  |  + 20260304065141_artifact_ledger\
+|  |  |  |  - migration.sql
+|  |  |  + 20260307231648_assessment_review_assignments\
+|  |  |  |  - migration.sql
+|  |  |  + 20260308224113_add_vendor_contacts\
+|  |  |  |  - migration.sql
+|  |  |  + 20260311000600_review_credits\
+|  |  |  |  - migration.sql
+|  |  |  + 20260311042406_review_queue_outcomes\
+|  |  |  |  - migration.sql
+|  |  |  + 20260312010551_add_assignment_released_status\
+|  |  |  |  - migration.sql
+|  |  |  + 20260313021237_review_outcome_enterprise_cleanup\
+|  |  |  |  - migration.sql
+|  |  |  + 20260314051210_add_notifications\
+|  |  |  |  - migration.sql
+|  |  |  + 20260314193421_add_notification_events_and_org_scoped_dedupe\
+|  |  |  |  - migration.sql
+|  |  |  + 20260321013742_review_release_workflow\
+|  |  |  |  - migration.sql
+|  |  |  + 20260321211040_truvern_credits_ledger\
+|  |  |  |  - migration.sql
+|  |  |  + 20260322044228_pnpm_prisma_migrate_devpnpm_prisma_generate\
+|  |  |  |  - migration.sql
+|  |  |  + 20260324040555_billing_lifecycle_20260323_230535\
+|  |  |  |  - migration.sql
+|  |  |  + 20260328211101_add_assessment_run_id_to_assessment_evidence\
+|  |  |  |  - migration.sql
+|  |  |  - migration_lock.toml
+|  |  + migrations_backup\
+|  |  |  + 20251205044032_relation_fixes\
+|  |  |  |  - migration.sql
+|  |  |  + 20251205044602_phase200_fusion_schema\
+|  |  |  |  - migration.sql
+|  |  |  + 20251210141915_add_evidence_deleted_at\
+|  |  |  |  - migration.sql
+|  |  |  + 20251211074032_add_assessment_score\
+|  |  |  |  - migration.sql
+|  |  |  + 20251211213801_add_category_scores_to_assessment\
+|  |  |  |  - migration.sql
+|  |  |  + 20251211225321_add_vendor_share_tokens\
+|  |  |  |  - migration.sql
+|  |  |  + 20251212024038_risk_trends_engine\
+|  |  |  |  - migration.sql
+|  |  |  + 20251212030335_risk_alerts_phase320\
+|  |  |  |  - migration.sql
+|  |  |  + 20251212045034_phase317a_assessment_builder_foundation\
+|  |  |  |  - migration.sql
+|  |  |  + 20251212193737_phase317_question_bank\
+|  |  |  |  - migration.sql
+|  |  |  + 20251213015139_phase318_submit_reopen_timestamps\
+|  |  |  |  - migration.sql
+|  |  |  + 20251213053928_add_issue_due_at\
+|  |  |  |  - migration.sql
+|  |  |  + 20251213055710_reset_public_schema_baseline\
+|  |  |  |  - migration.sql
+|  |  |  + 20251213063945_add_user_clerk_id\
+|  |  |  |  - migration.sql
+|  |  |  + 20251214000654_evidence_requests\
+|  |  |  |  - migration.sql
+|  |  |  + 20251214012503_phase321d_multi_file_evidence_requests\
+|  |  |  |  - migration.sql
+|  |  |  + 20251214015947_phase322a_review_note\
+|  |  |  |  - migration.sql
+|  |  |  + 20251214023341_phase322_evidence_request_iterations\
+|  |  |  |  - migration.sql
+|  |  |  + 20251214040917_phase322_evidence_request_iterations\
+|  |  |  |  - migration.sql
+|  |  |  + 20251215063940_activity_events\
+|  |  |  |  - migration.sql
+|  |  |  + 20251216053734_add_clerk_org_id\
+|  |  |  |  - migration.sql
+|  |  |  + 20251218031701_add_vendor_summary\
+|  |  |  |  - migration.sql
+|  |  |  + 20251219013232_evidence_kind_default_other\
+|  |  |  |  - migration.sql
+|  |  |  + 20251222164944_add_assessment_run\
+|  |  |  |  - migration.sql
+|  |  |  + 20251227071015\
+|  |  |  |  - migration.sql
+|  |  |  + 20251229013844_og_snapshot\
+|  |  |  |  - migration.sql
+|  |  |  + 20251229035358_og_images_and_sealing\
+|  |  |  |  - migration.sql
+|  |  |  + 20251229055739_add_vendor_sealed_hash\
+|  |  |  |  - migration.sql
+|  |  |  + 20251230035819_build_seal\
+|  |  |  |  - migration.sql
+|  |  |  + 20251231035329_add_evidence_status_created_at\
+|  |  |  |  - migration.sql
+|  |  |  + 20251231061749_evidence_request_events\
+|  |  |  |  - migration.sql
+|  |  |  + 20260101191547_ogimage_and_iteration_updatedat_v2\
+|  |  |  |  - migration.sql
+|  |  |  + 20260103025248_risk_snapshot_undo_regenerate\
+|  |  |  |  - migration.sql
+|  |  |  + 20260103191448_evidence_request_templates\
+|  |  |  |  - migration.sql
+|  |  |  + 20260103234116_add_template_drafts\
+|  |  |  |  - migration.sql
+|  |  |  + 20260103235152_add_template_drafts\
+|  |  |  |  - migration.sql
+|  |  |  + 20260104005404_add_template_published_at\
+|  |  |  |  - migration.sql
+|  |  |  + 20260104005540_add_template_published\
+|  |  |  |  - migration.sql
+|  |  |  + 20260104011816_fix_template_orgid_and_publish\
+|  |  |  |  - migration.sql
+|  |  |  + 20260104015858_assessment_template_orgid_to_organizationid\
+|  |  |  |  - migration.sql
+|  |  |  + 20260104182812_template_publish_fields\
+|  |  |  |  - migration.sql
+|  |  |  + 20260104183735_add_org_plantier\
+|  |  |  |  - migration.sql
+|  |  |  + 20260104190835_add_orgmembership_userdbid\
+|  |  |  |  - migration.sql
+|  |  |  + 20260104223903_template_drafts_per_user\
+|  |  |  |  - migration.sql
+|  |  |  - migration_lock.toml
+|  |  + seeds\
+|  |  - _baseline.sql
+|  |  - _fix_riskScore.ts
+|  |  - demo-seed.cjs
+|  |  - demo-seed-force.cjs
+|  |  - schema.bak.prisma
+|  |  - schema.prisma
+|  |  - schema.prisma.bak.20251019-230039
+|  |  - schema.prisma.bak_phase200
+|  |  - schema.prisma.bak-20251019230905
+|  |  - schema.prisma.bak-20251019-232105
+|  |  - schema.prisma.bak-20251019-234903
+|  |  - schema.prisma.bak-20251019-235134
+|  |  - schema.prisma.bak-20251022-005316
+|  |  - schema.prisma.bak-20251024-225740
+|  |  - schema.prisma.bak-20251024-230201
+|  |  - schema.prisma.bak-20251024-230321
+|  |  - schema.prisma.bak-clean-20251020-000120
+|  |  - schema.prisma.bak-clean-20251020-000720
+|  |  - schema.prisma.bak-final-20251019-235345
+|  |  - schema.prisma.bak-final-20251019-235620
+|  |  - seed.cjs
+|  |  - seed.js
+|  |  - seed.prod.ts
+|  |  - seed.ts
+|  |  - seed.ts.bak-20251024-224743
+|  |  - seed.ts.bak-20251024-225031
+|  |  - verify.prod.ts
+|  |  - verify.ts
+|  + public\
+|  |  + .well-known\
+|  |  |  - security.txt
+|  |  + brand\
+|  |  |  - truvern-mark.svg
+|  |  |  - truvern-shield.svg
+|  |  |  - truvern-social-card.png
+|  |  + New folder\
+|  |  + ops\
+|  |  |  + health\
+|  |  |  |  - integrity-timeline.md
+|  |  |  |  - master-seal.json
+|  |  + public-status\
+|  |  |  - badge.json
+|  |  |  - badge.svg
+|  |  |  - index.json
+|  |  + trust-network\
+|  |  |  - trust-network-demo.png
+|  |  + uploads\
+|  |  |  + evidence\
+|  |  |  |  - 2026-01-12T06-23-43.913Z-e70d8e8a654b38833f0bb9d6.txt
+|  |  |  |  - 2026-03-29T22-45-40.464Z-45dd2629d0486fbe48686cb7.txt
+|  |  |  - package_1767146444245_140f8abbd3bda.json
+|  |  |  - test-1766787741153-498bd7e75e79b8.txt
+|  |  + vendor\
+|  |  - apple-icon-180.png
+|  |  - apple-touch-icon.png
+|  |  - brand-wordmark.svg
+|  |  - favicon.ico
+|  |  - favicon.png
+|  |  - favicon-16x16.png
+|  |  - favicon-192x192.png
+|  |  - favicon-32x32.png
+|  |  - favicon-512x512.png
+|  |  - manifest.json
+|  |  - manifest-icon-192.maskable.png
+|  |  - manifest-icon-512.maskable.png
+|  |  - og.png.html
+|  |  - opengraph-image.png
+|  |  - robots.txt
+|  |  - site.webmanifest
+|  |  - sitemap.txt
+|  + public-status\
+|  |  - badge.json
+|  |  - badge.svg
+|  |  - index.json
+|  + reports\
+|  |  + board\
+|  |  |  - board-2025-10-30.txt
+|  |  - index.html
+|  |  - Phase136-FinalBoardSync-20251111-221809.json
+|  |  - Phase137b-HttpClientWarm-20251111-222550.json
+|  |  - Phase137-Postfix-CachePurge-20251111-222304.json
+|  |  - Phase140-GoLive-20251111-222851.json
+|  |  - Phase141-Favicon-OG-Fix-20251111-223728.json
+|  |  - Phase142-SEO-Tags-Verify-20251111-225757.json
+|  |  - Phase143b-SEO-Autofix-Fix-20251111-231514.json
+|  |  - Phase144-ContentBootstrap-20251111-232503.json
+|  |  - Phase145-MetadataRebuild-20251111-233536.json
+|  |  - Phase146c-SEO-MetaRestore-20251111-234949.json
+|  |  - Phase148-MetadataMerge-20251112-000554.json
+|  |  - Phase154-DeepMetadataAudit-20251112-211111.json
+|  + scripts\
+|  |  + integrity\
+|  |  |  - HashEngine.psm1
+|  |  |  - SealCore.ps1
+|  |  + logs\
+|  |  |  + badges\
+|  |  |  |  - badge-20251206_083631.json
+|  |  |  |  - badge-20251206_083631.svg
+|  |  |  |  - badge-20251206_084542.json
+|  |  |  |  - badge-20251206_084542.svg
+|  |  |  |  - badge-20251206_085125.json
+|  |  |  |  - badge-20251206_085125.svg
+|  |  |  |  - badge-20251206_091008.json
+|  |  |  |  - badge-20251206_091008.svg
+|  |  |  + board\
+|  |  |  |  - board-report-20251205_130440.csv
+|  |  |  |  - board-report-20251205_132032.csv
+|  |  |  |  - board-report-20251205_182109.csv
+|  |  |  + deploy\
+|  |  |  |  - Phase210-Deploy-20251205_155448.txt
+|  |  |  |  - Phase210-Deploy-20251205_155727.txt
+|  |  |  |  - Phase210-Deploy-20251205_181211.txt
+|  |  |  |  - Phase210-Deploy-20251206_205922.txt
+|  |  |  |  - Phase210-Deploy-20251206_211159.txt
+|  |  |  + deploys\
+|  |  |  |  - audit-20251030-205545.json
+|  |  |  |  - audit-20251030-210638.json
+|  |  |  |  - audit-20251030-211918.json
+|  |  |  |  - audit-20251030-212111.json
+|  |  |  + evidence\
+|  |  |  |  - Phase202-EvidenceHealth-20251205_134438.md
+|  |  |  |  - Phase202-EvidenceHealth-20251205_182115.md
+|  |  |  |  - prod-api-evidence-1-20251204-090444.txt
+|  |  |  |  - prod-api-evidence-1-20251204-140337.txt
+|  |  |  |  - prod-api-evidence-1-20251204-140935.txt
+|  |  |  |  - prod-api-evidence-list-20251204-090444.txt
+|  |  |  |  - prod-api-evidence-list-20251204-140337.txt
+|  |  |  |  - prod-api-evidence-list-20251204-140935.txt
+|  |  |  |  - prod-vendors-1-20251204-090444.txt
+|  |  |  |  - prod-vendors-1-20251204-140337.txt
+|  |  |  |  - prod-vendors-1-20251204-140935.txt
+|  |  |  + integrity\
+|  |  |  |  - integrity-timeline.md
+|  |  |  |  - master-seal-latest.json
+|  |  |  |  - Phase203-MasterSeal-20251205_135131.json
+|  |  |  |  - Phase203-MasterSeal-20251205_135131.md
+|  |  |  |  - Phase203-MasterSeal-20251205_145204.json
+|  |  |  |  - Phase203-MasterSeal-20251205_145204.md
+|  |  |  |  - Phase203-MasterSeal-20251205_150228.json
+|  |  |  |  - Phase203-MasterSeal-20251205_150228.md
+|  |  |  |  - Phase203-MasterSeal-20251205_151224.json
+|  |  |  |  - Phase203-MasterSeal-20251205_151224.md
+|  |  |  |  - Phase203-MasterSeal-20251205_152510.json
+|  |  |  |  - Phase203-MasterSeal-20251205_152510.md
+|  |  |  |  - Phase203-MasterSeal-20251205_152637.json
+|  |  |  |  - Phase203-MasterSeal-20251205_152637.md
+|  |  |  |  - Phase203-MasterSeal-20251205_154246.json
+|  |  |  |  - Phase203-MasterSeal-20251205_154246.md
+|  |  |  |  - Phase203-MasterSeal-20251205_184441.json
+|  |  |  |  - Phase203-MasterSeal-20251205_184441.txt
+|  |  |  |  - Phase203-MasterSeal-20251205_185402.json
+|  |  |  |  - Phase203-MasterSeal-20251205_185402.txt
+|  |  |  |  - Phase203-MasterSeal-20251205_192329.json
+|  |  |  |  - Phase203-MasterSeal-20251205_192329.txt
+|  |  |  |  - Phase203-MasterSeal-20251205_193051.json
+|  |  |  |  - Phase203-MasterSeal-20251205_193051.txt
+|  |  |  |  - Phase203-MasterSeal-20251206_073329.json
+|  |  |  |  - Phase203-MasterSeal-20251206_081549.json
+|  |  |  |  - Phase203-Seal-20251206_082510.json
+|  |  |  |  - Phase203-Seal-20251206_084504.json
+|  |  |  |  - Phase203-Seal-20251206_090926.json
+|  |  |  |  - Phase204-MasterSealVerify-20251205_191558.json
+|  |  |  - Phase192-2025-12-04_18-16-15.txt
+|  |  |  - Phase192-2025-12-04_18-20-42.txt
+|  |  |  - Phase192-Deploy-2025-12-04_18-08-42.md
+|  |  |  - Phase192-Deploy-2025-12-04_18-12-52.md
+|  |  - .gitignore
+|  |  - backfillAssessmentCIA.js
+|  |  - backfillAssessmentEvidenceRunId.ts
+|  |  - backfillAssessmentEvidenceRunIds.js
+|  |  - backfillAssessmentScores.js
+|  |  - backfillEvidenceRequestLinks.js
+|  |  - backfillEvidenceRequestLinks.ts
+|  |  - backfill-program-state-seals.js
+|  |  - backfill-question-templateIds.ts
+|  |  - backfill-template-categories.ts
+|  |  - bootstrap.mjs
+|  |  - check-snapshots.js
+|  |  - check-vendors.js
+|  |  - clear-vendor-seal.js
+|  |  - debug-orgs.ts
+|  |  - debug-vendors.js
+|  |  - DeployAndGate.ps1
+|  |  - DeployWithAlerts.ps1
+|  |  - dev-dump-subs.cjs
+|  |  - dev-ensure-membership.ts
+|  |  - dev-list-orgs.cjs
+|  |  - dev-set-pro.cjs
+|  |  - dev-upsert-sub-pro.cjs
+|  |  - fix-no-explicit-any.ts
+|  |  - GenerateHealthDashboard.ps1
+|  |  - generateRiskAlerts.js
+|  |  - grantCredits.ts
+|  |  - make-delta-snapshot.js
+|  |  - make-og.js
+|  |  - map-org.js
+|  |  - Notify.ps1
+|  |  - Notify-Test.ps1
+|  |  - orgs.js
+|  |  - patch-soc2-template.js
+|  |  - Phase10-PrepAndEnvSync.ps1
+|  |  - Phase179-EnvAndProjectAudit.ps1
+|  |  - Phase180-RouteHealthCheck.ps1
+|  |  - Phase181-AutoEvidence.ps1
+|  |  - Phase181-EvidencePanel.ps1
+|  |  - Phase181-Fix.ps1
+|  |  - Phase181-Fix-V2.ps1
+|  |  - Phase181-FIX-V3.ps1
+|  |  - Phase182-EvidenceAudit.ps1
+|  |  - Phase183-NormalizeEvidence.ps1
+|  |  - Phase184-EvidenceUpload.ps1
+|  |  - Phase184-EvidenceUploadHealth.ps1
+|  |  - Phase185-EvidenceListLive.ps1
+|  |  - Phase186-BoardEvidenceKPI.ps1
+|  |  - Phase187-EvidenceCoverage.ps1
+|  |  - Phase188-VendorEvidenceHealth.ps1
+|  |  - Phase189-ProjectReadiness.ps1
+|  |  - Phase190-ProdLaunchReadiness.ps1
+|  |  - Phase192-FinalDeploy.ps1
+|  |  - Phase201-BoardSnapshot.ps1
+|  |  - Phase202-EvidenceHealth.ps1
+|  |  - Phase203-MasterIntegritySeal.ps1
+|  |  - Phase203-MasterSeal.ps1
+|  |  - Phase203-MasterSeal-FIX.ps1
+|  |  - Phase204-MasterSealVerify.ps1
+|  |  - Phase205-HealthBadge.ps1
+|  |  - Phase205-MasterSealBadge.ps1
+|  |  - Phase206-StatusPublish.ps1
+|  |  - Phase207-IntegrityTimeline.ps1
+|  |  - Phase207-StatusStaticSync.ps1
+|  |  - Phase208-OpsIntegrityDashboard.ps1
+|  |  - Phase209-PublicStatusBadge.ps1
+|  |  - Phase210-VercelProdDeploy.ps1
+|  |  - Phase211-EvidenceUpload.ps1
+|  |  - Phase213-LogoAudit.ps1
+|  |  - Phase325A-ActivityFeedBackend.ps1
+|  |  - Phase325B-ActivityFeedAPI.ps1
+|  |  - Phase325B-Hotfix-ActivityRouteRename.ps1
+|  |  - Phase325C-ActivityFeedUI.ps1
+|  |  - Phase325D-ActivityEventWriters.ps1
+|  |  - Phase325D-FixClerkMiddlewareAndSignIn.ps1
+|  |  - Phase325E-CreateOrAttachClerkMembership.ps1
+|  |  - Phase325F-VerifyClerkOrgMembership.ps1
+|  |  - Phase325G-OrgGuardAndRouteProtection.ps1
+|  |  - Phase325H-OrgDbScoping.ps1
+|  |  - PhaseDeploy-Standard.ps1
+|  |  - PostDeployHealth.ps1
+|  |  - prisma-check-program-state-seals.js
+|  |  - Prisma-Migrate.ps1
+|  |  - seedDemoOngoingAssessment.js
+|  |  - seed-evidence-templates.ts
+|  |  - seed-vendors.ts
+|  |  - seed-vendors-smart.js
+|  |  - syncVendorRiskFromAssessments.js
+|  |  - syncVendorRiskTrends.js
+|  |  - test-trust-network-export.mjs
+|  |  - ui-atlas.mjs
+|  + src\
+|  |  + components\
+|  |  |  + site\
+|  |  |  |  - AuthButtons.tsx
+|  |  |  |  - LanguageSwitcher.tsx
+|  |  |  |  - Logo.tsx
+|  |  |  - Gtag.tsx
+|  |  + lib\
+|  |  |  + i18n\
+|  |  |  |  - client.ts
+|  |  |  - auth.ts
+|  |  |  - db.ts
+|  |  |  - email.ts
+|  |  |  - prisma.ts
+|  |  |  - scoring.ts
+|  |  |  - validators.ts
+|  + styles\
+|  |  - tw-input.css
+|  + tests\
+|  |  - _integrity.mjs
+|  |  - integrity.test.mjs
+|  |  - integrity.test.ts
+|  + tmp\
+|  |  - truvern_vendor_packet_1.pdf
+|  + tools\
+|  |  - ci_secrets_preview.json
+|  |  - ci_secrets_verify.ps1
+|  |  - PATCH_DUMP_P263-P265.txt
+|  |  - prisma.ps1
+|  |  - repo-tree.ps1
+|  |  - route-audit.ps1
+|  |  - route-tree.ps1
+|  + types\
+|  |  - plan.d.ts
+|  + ui-atlas\
+|  |  - billing.png
+|  |  - board-packet.png
+|  |  - board-packet_print.png
+|  |  - home.png
+|  |  - index.html
+|  |  - pricing.png
+|  |  - upgrade.png
+|  |  - vendors.png
+|  - .env
+|  - .env.__pulled.BAK
+|  - .env.example
+|  - .env.local
+|  - .env.production.local.BAK
+|  - .env.temp.BAK
+|  - .eslintrc.json
+|  - .gitattributes
+|  - .gitignore
+|  - .last-org-id.txt
+|  - .npmrc.bak
+|  - .vercel-redeploy.txt
+|  - .warn_cursor.txt
+|  - .warn_files.txt
+|  - __dbtest.js
+|  - _board_1.html
+|  - _body.json
+|  - _check_snapshots.js
+|  - _DISABLED_middleware.ts.txt
+|  - _DISABLED_middleware_20251221_202102.ts.txt
+|  - _DISABLED_proxy.ts.txt
+|  - _discard.json
+|  - _draft.json
+|  - _draft_test.json
+|  - _draft2.json
+|  - _draftA.json
+|  - _draftB.json
+|  - _evidence_request_statuses.js
+|  - _force_seal_snapshot.js
+|  - _inspect_issue_fields.js
+|  - _inspect_snapshot_model.js
+|  - _inspect_vendor_risk_snapshot.js
+|  - _list_trust_vendors.js
+|  - _make_delta_snapshot.js
+|  - _middleware.disabled.ts
+|  - _paste_0.txt
+|  - _proxy.DISABLED.ts
+|  - _publish.json
+|  - _reopen.json
+|  - _req.json
+|  - _review.json
+|  - _rr_inspect.js
+|  - _sealed_check.js
+|  - _seed_coverage_policy.js
+|  - _seed_evidence_requests.js
+|  - _submit.json
+|  - _tmp_prisma_check.js
+|  - _tmp_vendor_1.csv
+|  - _tmp_vendor_1.pdf
+|  - _tpl_draft.json
+|  - _tpl_patch.json
+|  - _tpl_publish.json
+|  - _tpl_structure.json
+|  - _trust_network_page_current.txt
+|  - _vendor_create.json
+|  - _vendors_1.html
+|  - _write_vendors_page.cmd
+|  - A_digital_vector_graphic_features_the_logo_design_.png
+|  - add-health.ps1
+|  - alias-fix.ps1
+|  - board-report.csv
+|  - check-og.js
+|  - check-og-7.js
+|  - check-og-7-sealed.js
+|  - check-vendor1.js
+|  - ci_secrets_preview.json
+|  - clean_and_commit.ps1
+|  - clean-reinstall.ps1
+|  - deploy.ps1
+|  - deploy_output.txt
+|  - deploy-log-20251028-200032.txt
+|  - deploy-marker.txt
+|  - deployments.json
+|  - deploy-now.ps1
+|  - deploy-truvern.ps1
+|  - Dockerfile
+|  - evidence.csv
+|  - favicon.png
+|  - find-seal-writers.ps1
+|  - fix-alias.ps1
+|  - fix-build.ps1
+|  - fix-css-and-deploy.ps1
+|  - fix-react-next-build.ps1
+|  - fix-tailwind-css.ps1
+|  - fix-truvern.ps1
+|  - FULL_PATH_FROM_OUTPUT.txt
+|  - fullEvidenceMigration.sql
+|  - homepage_check.html
+|  - homepage_live.html
+|  - homepage_live_with_nav.html
+|  - homepage_snapshot.html
+|  - instrumentation.ts
+|  - instrumentation.ts.disabled.disabled
+|  - jsconfig.json
+|  - last-deploy.txt
+|  - last-truvern-path.txt
+|  - meta-scan-prod.txt
+|  - middleware.ts
+|  - neon-auth-test.js
+|  - neon-setup.ps1
+|  - neon-test.js
+|  - next.config.backup.js
+|  - next.config.js
+|  - next.config.js.backup
+|  - next.config.js.bak_20251023_010547
+|  - next.config.js.bak_20251023_010547.bak
+|  - next.config.js.bak_20251023_013158
+|  - next.config.js.bak_20251023_013158.bak
+|  - next.config.js.bak_20251023_020556
+|  - next.config.js.bak_20251023_020556.bak
+|  - next.config.js.bak_20251023_021730
+|  - next.config.js.bak_20251023_021730.bak
+|  - next.config.js.bak_20251023_023146
+|  - next.config.js.bak_20251023_023146.bak
+|  - next.config.js.bak_20251023_083517
+|  - next.config.js.bak_20251023_083517.bak
+|  - next.config.mjs
+|  - next.config.mjs.bak
+|  - next.config.mjs.bak_20251031-011840
+|  - next-env.d.ts
+|  - og_board.png
+|  - og_board_2.png
+|  - og_board_real
+|  - og_board_real.png
+|  - og_body.json
+|  - package.backup.json
+|  - package.bak.json
+|  - package.broken.20251129121203.json
+|  - package.json
+|  - package.json.bak
+|  - package.json.bak_20251020232731
+|  - package.json.bak-20251024-224743
+|  - package.json.bak-20251024-225031
+|  - package.json.bak-20251024-225224
+|  - package.json.broken
+|  - package.json.broken.20251129124409.json
+|  - package.json.corrupt
+|  - package.rebuild-backup.20251129121836.json
+|  - package-lock.json
+|  - Phase104b-HomePageRebuild.ps1
+|  - Phase106-FIX.ps1
+|  - Phase107-FinalPolish.ps1
+|  - Phase108-FinalTheme.ps1
+|  - Phase10-AutoLinkVerifier.ps1
+|  - Phase10-DeployGate-Safe.ps1
+|  - Phase10-Prep.ps1
+|  - Phase10-QuickCheck.ps1
+|  - Phase113b-FindTruvern.ps1
+|  - Phase113-WorkspaceSwitch.ps1
+|  - Phase114-DirectRun.ps1
+|  - Phase116-FinalizeUI.ps1
+|  - Phase119c-SafeDeploy.ps1
+|  - Phase119-UI-Polish.ps1
+|  - Phase11-Final-AutoRollback.ps1
+|  - Phase11-RollbackAndReport.ps1
+|  - Phase11-RunWithNotify.ps1
+|  - Phase121i-DomainVerifyFinal.ps1
+|  - Phase121m-ForceDeploy.ps1
+|  - Phase121m-ForceDeploy-Final.ps1
+|  - Phase121n-SafeForceDeploy.ps1
+|  - Phase121o-SafeAliasFinalize.ps1
+|  - Phase121q2-UTF8BoardFix-Safe.ps1
+|  - Phase121q4b-ForceBuildDeploy.ps1
+|  - Phase121q4-ForceBuildDeploy.ps1
+|  - Phase121r2-ResultsPageFix-ASCII.ps1
+|  - Phase121r3-ResultsFix-StartProc.ps1
+|  - Phase121r4h-VercelDeploy+Verify+ShotOpen.ps1
+|  - Phase121r4-VercelDeployFix.ps1
+|  - Phase121r-ResultsPageFix.ps1
+|  - Phase122a-StyleHotfix.ps1
+|  - Phase122j2-DeployStable-ASCII.ps1
+|  - Phase122j-DeployStable.ps1
+|  - Phase122k-FixBuild.ps1
+|  - Phase122w-PublicBypass.ps1
+|  - Phase122z-Chain.ps1
+|  - Phase123c-FixBuild.ps1
+|  - Phase123c-FixBuild2.ps1
+|  - Phase123d-DeployVerify.ps1
+|  - Phase123f-PublicVerify.ps1
+|  - Phase123-PolishChain.ps1
+|  - Phase123-PolishChain-Safe.ps1
+|  - Phase124c-TeamRebind.ps1
+|  - Phase124c-TeamRebind2.ps1
+|  - Phase124d-SafeBuildDeploy.ps1
+|  - Phase124e-Cleanup.ps1
+|  - Phase124-FinalPolish.ps1
+|  - Phase125b-FixVercelPath.ps1
+|  - Phase125c-FullSafeAlias.ps1
+|  - Phase125d-SafeAliasFinal.ps1
+|  - Phase125e-FixVercelCLI.ps1
+|  - Phase125f-FullAutoRepair.ps1
+|  - Phase125g2-FullAutoRepair-PS5.ps1
+|  - Phase125g3-FullAutoRepair-Final.ps1
+|  - Phase125g-FullAutoRepair.ps1
+|  - Phase125-SafeAlias.ps1
+|  - Phase126b-SafeLinkRepair-Direct.ps1
+|  - Phase126-SafeLinkRepair.ps1
+|  - Phase127-SafeAlias.ps1
+|  - Phase128-FinalAliasVerify.ps1
+|  - Phase12-Setup-Notify.ps1
+|  - Phase131-UI-Polish-Final.ps1
+|  - Phase132b-FixAssessmentRoute.ps1
+|  - Phase132c-AddResultsDisabledStub.ps1
+|  - Phase132c-SimpleDeploy.ps1
+|  - Phase132d-AddResultsDisabledAPIRoute.ps1
+|  - Phase132-Deploy-Prebuilt.ps1
+|  - Phase132e-DisableResultsRoute.ps1
+|  - Phase132f-PatchedBuild.ps1
+|  - Phase132g-CloudDeploy.ps1
+|  - Phase133b-FixVendorPages.ps1
+|  - Phase133c-FixVendorPrisma.ps1
+|  - Phase133-ContentScaffold.ps1
+|  - Phase133-FinalSync.ps1
+|  - Phase133-FinalSync-Fixed.ps1
+|  - Phase133-FinalSync-Fixed2.ps1
+|  - Phase133-FixVendors.ps1
+|  - Phase134-BoardEnhance.ps1
+|  - Phase134-deploy-output.txt
+|  - Phase134-FinalDeploy.ps1
+|  - Phase135b-ForceDemoSeed.ps1
+|  - Phase135c-ForceDemoSeedFix.ps1
+|  - Phase135-HealthCheck.ps1
+|  - Phase135-HealthCheck-20251111-220836.json
+|  - Phase135-HealthCheck-Fixed.ps1
+|  - Phase135-HealthCheck-Legacy.ps1
+|  - Phase135-SeedDemo.ps1
+|  - Phase136c-Deploy-Source.ps1
+|  - Phase136-CSS-Repair.ps1
+|  - Phase136-FinalBoardSync.ps1
+|  - Phase136-FixVendorCreated.ps1
+|  - Phase137b-HttpClientWarm.ps1
+|  - Phase137-FIXED.ps1
+|  - Phase137-Fixed2.ps1
+|  - Phase137-Fixed3.ps1
+|  - Phase137-Nuclear.ps1
+|  - Phase137-Postfix-CachePurge.ps1
+|  - Phase137-TrustNetworkEnhance.ps1
+|  - Phase137-Vendor-Placeholder-Fix.ps1
+|  - Phase137-VendorSafe.ps1
+|  - Phase137-VendorSafe-Base64.ps1
+|  - Phase138b-RebuildVendorsIndex.ps1
+|  - Phase138b-VendorWorkspaceForce.ps1
+|  - Phase138c-FixVendorsIndex.ps1
+|  - Phase138-Rebuild-VendorsIndex.ps1
+|  - Phase138-Restore-VendorsIndex.ps1
+|  - Phase138-Restore-VendorsIndex-Safe.ps1
+|  - Phase138-Restore-VendorsIndex-Safe2.ps1
+|  - Phase138-VendorWorkspace.ps1
+|  - Phase139b-SimpleDeploy.ps1
+|  - Phase139-Deploy.ps1
+|  - Phase13D-SafeDeploy.ps1
+|  - Phase140-BoardReportUpgrade.ps1
+|  - Phase140-FixVendorsIndex.ps1
+|  - Phase140-GoLive-Checklist.ps1
+|  - Phase140-VendorsIndex-Replace.ps1
+|  - Phase141-Favicon-OG-Fix.ps1
+|  - Phase141-Favicon-OG-Fix-Safe.ps1
+|  - Phase142-SEO-Tags-Verify.ps1
+|  - Phase142-SEO-Tags-Verify-Safe.ps1
+|  - Phase143b-SEO-Autofix-Fix.ps1
+|  - Phase143-SEO-Autofix.ps1
+|  - Phase144-ContentBootstrap.ps1
+|  - Phase144-ContentBootstrap-Fixed.ps1
+|  - Phase145-MetadataRebuild.ps1
+|  - Phase145-MetadataRebuild-Fix.ps1
+|  - Phase146b-SEO-MetaRestore-Fix.ps1
+|  - Phase146c-SEO-MetaRestore-Final.ps1
+|  - Phase146-SEO-MetaRestore.ps1
+|  - Phase147b-MetadataRebuild-Fix.ps1
+|  - Phase147-MetadataRebuild-Final.ps1
+|  - Phase148a-LayoutFix.ps1
+|  - Phase148-MetadataMerge-Final.ps1
+|  - Phase149b-ProdDeploy-Now.ps1
+|  - Phase150-FinalRouteRepair.ps1
+|  - Phase150-VendorDossier.ps1
+|  - Phase151-EvidenceUpgrade.ps1
+|  - Phase152-EvidenceWorkspace.ps1
+|  - Phase152-SectionLayouts.ps1
+|  - Phase153-FindVendorPage.ps1
+|  - Phase155-BuildRouteRepair.ps1
+|  - Phase156b-PrivacyLambda-Fix.ps1
+|  - Phase156c-PrivacyLambda-Fix.ps1
+|  - Phase156-PrivacyLambda-Fix.ps1
+|  - Phase157-DashboardEvidence-Fix.ps1
+|  - Phase158-FixEvidenceLambda.ps1
+|  - Phase159-DisableEvidenceRoute.ps1
+|  - Phase160-DisableVendorDashboard.ps1
+|  - Phase161-FixSymlinkCollision.ps1
+|  - Phase162-CleanRebuild.ps1
+|  - Phase163b-DisableAssessmentResults-Force.ps1
+|  - Phase163-DisableAssessmentResults.ps1
+|  - Phase164b-SafeBuild.ps1
+|  - Phase165b-FinalDeploy-Fix.ps1
+|  - Phase165c-FinalDeploy.ps1
+|  - Phase165d-FinalDeploy.ps1
+|  - Phase165e-FinalDeploy-Safe.ps1
+|  - Phase165f-FinalDeploy-Fix.ps1
+|  - Phase165-FinalDeploy.ps1
+|  - Phase198-DriftRepair-And-Migrate.ps1
+|  - Phase199-DriftRepair.ps1
+|  - Phase199-Fixed.ps1
+|  - Phase203-204-Installer.ps1
+|  - Phase22-Rev2.ps1
+|  - Phase22-Rev3.ps1
+|  - Phase22-Rev3-Patched.ps1
+|  - Phase22-Rev3-TokenAuth.ps1
+|  - Phase22-Rev5-Lite.ps1
+|  - Phase22-Rev5-Lite-Final.ps1
+|  - Phase22-Rev5-Lite-Final-Rev2.ps1
+|  - Phase22-Rev5-Lite-Final-Rev3.ps1
+|  - Phase22-Rev5-Lite-Final-Rev4.ps1
+|  - Phase22-Rev5-Lite-Patched.ps1
+|  - Phase22-Rev5-StallBuster-Fixed.ps1
+|  - Phase24-Rev4.ps1
+|  - Phase24-Rev4c.ps1
+|  - Phase26-OwnershipRecover-Rev5.ps1
+|  - Phase33-LiveVerify-Rev3.ps1
+|  - Phase39-Observability.ps1
+|  - Phase40A-RouteCache.ps1
+|  - Phase40B-RouteCache-Verify.ps1
+|  - Phase41-RouteCaching.ps1
+|  - Phase42-BundleInsight.ps1
+|  - Phase43-PerfBudgets.ps1
+|  - Phase44-StaticAssets.ps1
+|  - Phase45-HealthProbes.ps1
+|  - Phase46-CanaryDeploy.ps1
+|  - Phase47-UptimeAlerts.ps1
+|  - Phase48-CSP.ps1
+|  - Phase49-SecurityHeaders.ps1
+|  - Phase50-NeonBackups.ps1
+|  - Phase51-DriftCheck.ps1
+|  - Phase52-DevUX.ps1
+|  - Phase53-PipelineHardening.ps1
+|  - Phase54-RestoreWizard.ps1
+|  - Phase55-PromoteHelper.ps1
+|  - Phase56-ProdChecklist.ps1
+|  - Phase57-RBAC-OrgRoles.ps1
+|  - Phase58-AssessmentsEngine.ps1
+|  - Phase59-EvidenceStore.ps1
+|  - phase5-db-verify.ps1
+|  - Phase60-RemediationFlows.ps1
+|  - Phase61a-FixBoardReport.ps1
+|  - Phase61-BoardReport.ps1
+|  - Phase61b-SeedDemoOrg.ps1
+|  - Phase61c-RunSeedDemo.ps1
+|  - Phase61-Harness-NoExit.ps1
+|  - Phase61-NoExit.ps1
+|  - Phase61-RunSeed-NoExit.ps1
+|  - Phase62-API-Bridge.ps1
+|  - Phase62-NoExit.ps1
+|  - Phase62-Verify.ps1
+|  - Phase63-AssessmentResults.ps1
+|  - Phase63-FixDuplicateApi.ps1
+|  - Phase64-BoardRescue.ps1
+|  - Phase64-BypassMiddleware.ps1
+|  - Phase64-FixBoardPage.ps1
+|  - Phase64-ResolveConflict.ps1
+|  - Phase67c.ps1
+|  - Phase68-BoardFinalize.ps1
+|  - Phase69-BoardApiRepair.ps1
+|  - phase6-deploy.ps1
+|  - Phase70-BoardHarden.ps1
+|  - Phase71-BoardPrismaSync.ps1
+|  - Phase72-BoardUIPolish.ps1
+|  - Phase73-Fix.ps1
+|  - Phase73-Tailwind.ps1
+|  - Phase74-Hotfix.ps1
+|  - Phase74-NodeDirect.ps1
+|  - Phase74-NodeDirect-Final.ps1
+|  - Phase74-NodeDirect-Fixed.ps1
+|  - Phase74-NodeDirect-PlainFix.ps1
+|  - Phase74-UIFoundation.ps1
+|  - Phase74-UIFoundation-Fixed.ps1
+|  - Phase75-UIComponents.ps1
+|  - Phase75-UIComponents-Fixed.ps1
+|  - Phase76-KPITiles.ps1
+|  - Phase77-MirrorKPIs.ps1
+|  - Phase78-BoardKPISection-Universal.ps1
+|  - Phase79-CreateDemoVendor.ps1
+|  - Phase79-CreateDemoVendor-Fixed.ps1
+|  - Phase79-CreateDemoVendor-Safe.ps1
+|  - Phase79-CreateDemoVendor-Universal.ps1
+|  - Phase80-AutoMirror.ps1
+|  - Phase81-LaunchHardening.ps1
+|  - Phase82-BillingAccess.ps1
+|  - Phase82to85-RevealAndRepair.ps1
+|  - Phase85a-EnvPushFix.ps1
+|  - Phase87b-StripeRebuild.ps1
+|  - Phase88-SWRRepair.ps1
+|  - Phase89-UsageRebuild.ps1
+|  - Phase90-CloudDeploy.ps1
+|  - Phase90d-Patch.ps1
+|  - Phase90d-Patch2.ps1
+|  - Phase90d-Runner.ps1
+|  - Phase90e-DowngradeLocal.ps1
+|  - Phase90e-Runner.ps1
+|  - Phase91k-ScanJson.ps1
+|  - Phase91r-Cleanup.ps1
+|  - Phase91-Run.cmd
+|  - Phase93-ClientNullGuard.ps1
+|  - Phase93-ClientNullGuard-Clean.ps1
+|  - Phase97d-VerifyFix.ps1
+|  - Phase98-FixTrustNetworkAPI.ps1
+|  - Phase9-Setup.ps1
+|  - Phase-API-AuthGuard.ps1
+|  - Phase-CLI-Deploy.ps1
+|  - Phase-CSS-Tailwindcss-Repair.ps1
+|  - Phase-DB-Reset-And-Deploy.ps1
+|  - Phase-PackageJson-ForceReset.ps1
+|  - Phase-PackageJson-Rebuild.ps1
+|  - Phase-PackageJson-Repair.ps1
+|  - Phase-Prisma-DBFix-And-Deploy.ps1
+|  - Phase-ProdDB-EvidenceSync.ps1
+|  - Phase-ProdDB-Sync-Vendors.ps1
+|  - Phase-Prod-HealthCheck.ps1
+|  - Phase-VendorSeed-And-Deploy.ps1
+|  - Phase-VendorSeed-And-Deploy-Simple.ps1
+|  - Phase-VerifyScripts.ps1
+|  - Phase-VerifyScripts-Tiny-Fixed-NoExit.ps1
+|  - pnpm-workspace.yaml
+|  - postcss.config.cjs
+|  - postcss.config.js
+|  - postcss.config.mjs
+|  - prisma.config.ts.bak-20251024-230201
+|  - prisma.config.ts.disabled
+|  - prisma-ping.cjs
+|  - production_build.ps1
+|  - project-tree.txt
+|  - raw.txt
+|  - README.md
+|  - redeploy-vercel.ps1
+|  - repair-build-and-deploy.ps1
+|  - repo-tree.txt
+|  - route-patch.txt
+|  - run-neon-setup.ps1
+|  - Run-Phase93.cmd
+|  - Run-Phase93.ps1
+|  - run-production-sync.ps1
+|  - run-repair.cmd
+|  - RunTruvernDeploy.ps1
+|  - Run-TruvernDeploy.ps1
+|  - Run-UptimeCheck.bat
+|  - Run-UptimeCheck.ps1
+|  - seed.ts.disabled
+|  - sentry.client.config.ts
+|  - sentry.edge.config.ts
+|  - sentry.server.config.ts
+|  - site_preview.html
+|  - site_preview_1_20251018_150614.html
+|  - site_preview_2_20251018_150614.html
+|  - sync-db.ps1
+|  - sync-deploy.ps1
+|  - tailwind.config.js
+|  - tailwind.config.ts
+|  - tailwind.config.ts.bak-phase136b
+|  - test-export.ps1
+|  - tmp_phase325a_backfill.sql
+|  - tmp_phase325a_verify.sql
+|  - trust.png
+|  - truvern-build-fix-bundle.txt
+|  - truvern-debug-files.txt
+|  - tsconfig.json
+|  - tsconfig.tsbuildinfo
+|  - ui-atlas.zip
+|  - vercel.json
+|  - vercel_backup.json
+|  - vercel_output.txt
+|  - vercel_ver.err
+|  - vercel_ver.txt
+|  - vercel-all.ps1
+|  - vercel-deploy-marker.txt
+|  - vercel-env-sync.ps1
+|  - verify-deploy.ps1
+|  - warn1.txt

@@ -1,0 +1,38 @@
+﻿LARGE FILES > 5MB
+=================
+
+FullName                                                                                                                                          Length
+--------                                                                                                                                          ------
+C:\dev\truvern\.next\cache\webpack\server-production\0.pack                                                                                    431827315
+C:\dev\truvern\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node                                                              148209152
+C:\dev\truvern\logs\snapshot-20251110-223132.zip                                                                                                74678746
+C:\dev\truvern\logs\snapshot-20251110-223645.zip                                                                                                74678746
+C:\dev\truvern\.next\cache\webpack\server-production\index.pack                                                                                 34057260
+C:\dev\truvern\.next\cache\webpack\server-production\index.pack.old                                                                             33765484
+C:\dev\truvern\.next\cache\webpack\client-development-fallback\0.pack.gz                                                                        26516842
+C:\dev\truvern\node_modules\prisma\engines\c2990dca591cba766e3b7ef5d9e8a84796e47ab7\query_engine-windows.dll.node                               21182976
+C:\dev\truvern\node_modules\.cache\prisma\master\c2990dca591cba766e3b7ef5d9e8a84796e47ab7\windows\libquery-engine                               21182976
+C:\dev\truvern\node_modules\prisma\query_engine-windows.dll.node                                                                                21182976
+C:\dev\truvern\node_modules\@prisma\engines\query_engine-windows.dll.node                                                                       21182976
+C:\dev\truvern\node_modules\@prisma\engines\node_modules\.cache\prisma\master\c2990dca591cba766e3b7ef5d9e8a84796e47ab7\windows\libquery-engine  21182976
+C:\dev\truvern\node_modules\.prisma\client\query_engine-windows.dll.node                                                                        21182976
+C:\dev\truvern\node_modules\@img\sharp-win32-x64\lib\libvips-42.dll                                                                             19112960
+C:\dev\truvern\node_modules\@prisma\engines\node_modules\.cache\prisma\master\c2990dca591cba766e3b7ef5d9e8a84796e47ab7\windows\schema-engine    18974720
+C:\dev\truvern\node_modules\@prisma\engines\schema-engine-windows.exe                                                                           18974720
+C:\dev\truvern\.next\cache\webpack\server-development\41.pack.gz                                                                                18633467
+C:\dev\truvern\logs\Phase132-Deploy-Prebuilt-20251114-165332.log                                                                                13582290
+C:\dev\truvern\logs\Phase132-Deploy-Prebuilt-20251114-170359.log                                                                                13558771
+C:\dev\truvern\logs\Phase132-Deploy-Prebuilt-20251114-171518.log                                                                                13535338
+C:\dev\truvern\logs\Phase132-Deploy-Prebuilt-20251114-172428.log                                                                                13511382
+C:\dev\truvern\node_modules\@sentry\cli-win32-x64\bin\sentry-cli.exe                                                                            12304896
+C:\dev\truvern\.next\cache\webpack\client-development\32.pack.gz                                                                                12030066
+C:\dev\truvern\.next\cache\webpack\client-development\18.pack.gz                                                                                11405743
+C:\dev\truvern\node_modules\typescript\lib\typescript.js                                                                                         9112572
+C:\dev\truvern\node_modules\@ts-morph\common\dist\typescript.js                                                                                  9111641
+C:\dev\truvern\.next\cache\webpack\edge-server-development\2.pack.gz                                                                             8578133
+C:\dev\truvern\repo_audit_output.txt                                                                                                             6237918
+C:\dev\truvern\node_modules\typescript\lib\_tsc.js                                                                                               6213092
+C:\dev\truvern\node_modules\.prisma\client\index.d.ts                                                                                            5939758
+
+
+

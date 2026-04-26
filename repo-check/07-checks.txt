@@ -1,0 +1,33 @@
+﻿BUILD / TYPE / LINT
+===================
+
+NODE VERSION
+v24.13.1
+
+PNPM VERSION
+10.33.0
+
+PNPM BUILD
+
+> truvern@ build C:\dev\truvern
+> node --max-old-space-size=12288 node_modules/next/dist/bin/next build
+
+   Γû▓ Next.js 15.5.9
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ΓÇëELIFECYCLEΓÇë Command failed with exit code 1.
+
+TSC NO EMIT
+app/api/assessment-templates/[id]/template-structure-editor.client.tsx(70,15): error TS1005: '(' expected.
+app/api/assessment-templates/[id]/template-structure-editor.client.tsx(230,1): error TS1005: ')' expected.
+app/api/assessment-templates/[id]/template-structure-editor.client.tsx(234,1): error TS1160: Unterminated template literal.
+app/api/evidence/upload/route.ts(36,3): error TS1443: Module declaration names may only use ' or " quoted strings.
+app/api/evidence/upload/route.ts(151,1): error TS1160: Unterminated template literal.
+
+PNPM LINT
+
+> truvern@ lint C:\dev\truvern
+> next lint
+
+ΓÇëELIFECYCLEΓÇë Command failed with exit code 1.

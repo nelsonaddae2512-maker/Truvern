@@ -1,0 +1,1511 @@
+﻿generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id                               Int                               @id @default(autoincrement())
+  name                             String
+  createdAt                        DateTime                          @default(now())
+  slug                             String                            @unique
+  updatedAt                        DateTime                          @updatedAt
+  clerkOrgId                       String?
+  planTier                         PlanTier                          @default(FREE)
+  billingEmail                     String?
+  billingUpdatedAt                 DateTime?
+  stripeCustomerId                 String?
+  stripeSubscriptionId             String?
+  assessments                      Assessment[]
+  assessmentEvidence               AssessmentEvidence[]
+  assessmentReviewAssignments      AssessmentReviewAssignment[]
+  assessmentReviewOutcomes         AssessmentReviewOutcome[]
+  assessmentReviewReleaseApprovals AssessmentReviewReleaseApproval[]
+  assessmentReviewReleaseRequests  AssessmentReviewReleaseRequest[]
+  assessmentRuns                   AssessmentRun[]
+  assessmentTemplates              AssessmentTemplate[]
+  auditLogs                        AuditLog[]                        @relation("OrganizationAuditLogs")
+  billingNotificationLogs          BillingNotificationLog[]
+  evidence                         Evidence[]
+  evidenceCoveragePolicies         EvidenceCoveragePolicy[]
+  evidenceRequests                 EvidenceRequest[]
+  evidenceRequestTemplates         EvidenceRequestTemplate[]
+  invites                          InviteToken[]
+  issues                           Issue[]
+  issueEvidenceLinks               IssueEvidence[]                   @relation("OrganizationIssueEvidence")
+  notifications                    Notification[]
+  notificationPreferences          NotificationPreference[]
+  memberships                      OrgMembership[]
+  reviewAssignments                ReviewAssignment[]
+  reviewCreditBalance              ReviewCreditBalance?
+  reviewEvidenceLinks              ReviewEvidenceLink[]
+  reviewPurchases                  ReviewPurchase[]
+  reviewRequests                   ReviewRequest[]
+  reviewResponses                  ReviewResponse[]
+  riskSnapshots                    RiskSnapshot[]
+  stripeEvents                     StripeEvent[]
+  subscriptions                    Subscription?
+  truvernCreditLedgerEntries       TruvernCreditLedgerEntry[]
+  truvernCreditPolicy              TruvernCreditPolicy?
+  usageEvents                      UsageEvent[]
+  vendors                          Vendor[]
+  vendorAssessmentInviteRuns       VendorAssessmentInviteRun[]
+  vendorAssessmentInvites          VendorAssessmentInviteToken[]
+  vendorContacts                   VendorContact[]
+  vendorPortalUsers                VendorPortalUser[]
+  vendorRiskSnapshots              VendorRiskSnapshot[]
+  artifactLedgerEntries            ArtifactLedgerEntry[]
+  boardPacketSeals                 BoardPacketSeal[]
+  programArtifacts                 ProgramArtifact[]
+  programStateSeals                ProgramStateSeal[]
+  programStates                    ProgramState[]
+
+  @@index([slug])
+  @@index([clerkOrgId])
+  @@index([stripeCustomerId])
+  @@index([stripeSubscriptionId])
+}
+
+model User {
+  id                                Int                               @id @default(autoincrement())
+  email                             String?                           @unique
+  name                              String?
+  createdAt                         DateTime                          @default(now())
+  organizationId                    Int?
+  updatedAt                         DateTime                          @updatedAt
+  displayName                       String?
+  clerkUserId                       String?                           @unique
+  createdAssessmentReviewOutcomes   AssessmentReviewOutcome[]         @relation("AssessmentReviewOutcomeCreatedByUser")
+  updatedAssessmentReviewOutcomes   AssessmentReviewOutcome[]         @relation("AssessmentReviewOutcomeUpdatedByUser")
+  assessmentReviewReleaseApprovals  AssessmentReviewReleaseApproval[] @relation("AssessmentReviewReleaseApprovalActorUser")
+  decidedAssessmentReviewReleases   AssessmentReviewReleaseRequest[]  @relation("AssessmentReviewReleaseRequestDecidedByUser")
+  requestedAssessmentReviewReleases AssessmentReviewReleaseRequest[]  @relation("AssessmentReviewReleaseRequestRequestedByUser")
+  publishedTemplates                AssessmentTemplate[]              @relation("TemplatePublishedBy")
+  auditLogs                         AuditLog[]                        @relation("UserAuditLogs")
+  memberships                       OrgMembership[]
+
+  @@index([email])
+  @@index([clerkUserId])
+}
+
+model OrgMembership {
+  id                                       Int                               @id @default(autoincrement())
+  userId                                   String
+  organizationId                           Int
+  role                                     OrgRole                           @default(MEMBER)
+  createdAt                                DateTime                          @default(now())
+  userDbId                                 Int?
+  updatedAt                                DateTime                          @default(now()) @updatedAt
+  assignedAssessmentReviewAssignments      AssessmentReviewAssignment[]      @relation("AssessmentReviewAssignmentMembership")
+  requestedAssessmentReviewAssignments     AssessmentReviewAssignment[]      @relation("AssessmentReviewAssignmentRequestedBy")
+  createdAssessmentReviewOutcomes          AssessmentReviewOutcome[]         @relation("AssessmentReviewOutcomeCreatedByMembership")
+  updatedAssessmentReviewOutcomes          AssessmentReviewOutcome[]         @relation("AssessmentReviewOutcomeUpdatedByMembership")
+  assessmentReviewReleaseApprovals         AssessmentReviewReleaseApproval[] @relation("AssessmentReviewReleaseApprovalActorMembership")
+  decidedAssessmentReviewReleaseRequests   AssessmentReviewReleaseRequest[]  @relation("AssessmentReviewReleaseRequestDecidedByMembership")
+  requestedAssessmentReviewReleaseRequests AssessmentReviewReleaseRequest[]  @relation("AssessmentReviewReleaseRequestRequestedByMembership")
+  auditLogs                                AuditLog[]                        @relation("OrgMembershipAuditLogs")
+  organization                             Organization                      @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user                                     User?                             @relation(fields: [userDbId], references: [id])
+  reviewAssignments                        ReviewAssignment[]
+  reviewPurchasesRequested                 ReviewPurchase[]                  @relation("ReviewPurchaseRequestedBy")
+  reviewPurchasesReviewer                  ReviewPurchase[]                  @relation("ReviewPurchaseReviewer")
+
+  @@index([organizationId, userId])
+  @@index([userId])
+  @@index([userDbId])
+  @@index([organizationId, role])
+}
+
+model Vendor {
+  id                              Int                              @id @default(autoincrement())
+  name                            String
+  riskScore                       Float?
+  createdAt                       DateTime                         @default(now())
+  organizationId                  Int
+  category                        String?
+  criticality                     VendorCriticality                @default(MEDIUM)
+  slug                            String
+  status                          String?
+  tier                            VendorTier                       @default(STANDARD)
+  updatedAt                       DateTime                         @updatedAt
+  riskTrend30d                    String?
+  contactEmail                    String?
+  contactName                     String?
+  website                         String?
+  description                     String?
+  materiality                     VendorMateriality                @default(MODERATE)
+
+  // NEW: flexible vendor data / service profile
+  dataProfile                     Json?
+
+  sealedAlg                       String?                          @default("sha256-json-canon")
+  sealedAt                        DateTime?
+  sealedBy                        String?
+  sealedHash                      String?
+  sealedPayload                   Json?
+  assessments                     Assessment[]
+  assessmentReviewAssignments     AssessmentReviewAssignment[]
+  assessmentReviewOutcomes        AssessmentReviewOutcome[]
+  assessmentReviewReleaseRequests AssessmentReviewReleaseRequest[]
+  assessmentRuns                  AssessmentRun[]
+  evidence                        Evidence[]
+  evidenceRequests                EvidenceRequest[]
+  issues                          Issue[]
+  reviewPurchases                 ReviewPurchase[]
+  reviewRequests                  ReviewRequest[]
+  riskSnapshots                   RiskSnapshot[]
+  organization                    Organization                     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendorAssessmentInviteRuns      VendorAssessmentInviteRun[]
+  vendorAssessmentInvites         VendorAssessmentInviteToken[]
+  contacts                        VendorContact[]
+  vendorPortalUsers               VendorPortalUser[]
+  vendorRiskSnapshots             VendorRiskSnapshot[]
+  artifactLedgerEntries           ArtifactLedgerEntry[]            @relation("ArtifactLedgerSubjectVendor")
+  appliedAssessments              Assessment[]                     @relation("Vendor_AppliedAssessment")
+
+  @@index([organizationId, slug])
+  @@index([organizationId, name])
+  @@index([organizationId, materiality])
+  @@index([organizationId, sealedAt(sort: Desc)])
+  @@index([sealedAt])
+  @@index([sealedHash])
+  @@index([organizationId, sealedHash])
+}
+
+model VendorContact {
+  id             Int          @id @default(autoincrement())
+  organizationId Int
+  vendorId       Int
+  name           String
+  email          String?
+  phone          String?
+  title          String?
+  isPrimary      Boolean      @default(false)
+  sortOrder      Int          @default(0)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendor         Vendor       @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, vendorId])
+  @@index([vendorId, sortOrder])
+  @@index([organizationId, email])
+  @@index([organizationId, name])
+}
+
+model VendorRiskSnapshot {
+  id             Int          @id @default(autoincrement())
+  vendorId       Int
+  score          Float?
+  createdAt      DateTime     @default(now())
+  label          String?
+  summary        String?
+  details        Json?
+  organizationId Int
+  updatedAt      DateTime     @updatedAt
+  sealedAt       DateTime?
+  sealedHash     String?
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendor         Vendor       @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, vendorId, createdAt(sort: Desc)])
+  @@index([vendorId])
+  @@index([organizationId, vendorId, sealedAt(sort: Desc)])
+  @@index([sealedAt])
+  @@index([sealedHash])
+  @@index([organizationId, sealedHash])
+}
+
+model AuditLog {
+  id                Int            @id @default(autoincrement())
+  organizationId    Int
+  actorUserId       Int?
+  actorMembershipId Int?
+  action            String
+  entityType        String
+  entityId          Int?
+  summary           String?
+  meta              Json?
+  ip                String?
+  userAgent         String?
+  createdAt         DateTime       @default(now())
+  actorMembership   OrgMembership? @relation("OrgMembershipAuditLogs", fields: [actorMembershipId], references: [id])
+  actorUser         User?          @relation("UserAuditLogs", fields: [actorUserId], references: [id])
+  organization      Organization   @relation("OrganizationAuditLogs", fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, entityType, entityId])
+  @@index([actorUserId])
+  @@index([actorMembershipId])
+  @@map("AuditLog")
+}
+
+model AssessmentTemplate {
+  id                  Int             @id @default(autoincrement())
+  name                String
+  description         String?
+  standard            String?
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+  category            String?
+  code                String?
+  isActive            Boolean         @default(false)
+  version             String?
+  draftStructure      Json?
+  structure           Json?
+  publishedAt         DateTime?
+  organizationId      Int
+  publishedById       Int?
+  publishedStructure  Json?
+  origin              TemplateOrigin  @default(ORG)
+  presetKey           String?
+  catalogInstalledAt  DateTime?
+  catalogKey          String?
+  catalogRequiresTier String?
+  catalogVersion      String?
+  assessments         Assessment[]
+  runs                AssessmentRun[]
+  organization        Organization    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  publishedBy         User?           @relation("TemplatePublishedBy", fields: [publishedById], references: [id])
+  reviewRequests      ReviewRequest[]
+
+  @@unique([organizationId, presetKey])
+  @@unique([organizationId, catalogKey])
+  @@index([organizationId, isActive, updatedAt])
+  @@index([publishedById])
+  @@index([organizationId, origin, updatedAt])
+}
+
+model Assessment {
+  id                Int                  @id @default(autoincrement())
+  createdAt         DateTime             @default(now())
+  vendorId          Int
+  organizationId    Int
+  status            AssessmentStatus     @default(DRAFT)
+  templateId        Int
+  title             String?
+  updatedAt         DateTime             @updatedAt
+  description       String?
+  responses         Json?
+  templateSnapshot  Json?
+  submissionNote    String?
+  submittedAt       DateTime?
+  completedAt       DateTime?
+  dueAt             DateTime?
+  recipientEmails   String[]             @default([])
+  organization      Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  template          AssessmentTemplate   @relation(fields: [templateId], references: [id])
+  vendor            Vendor               @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  evidenceLinks     AssessmentEvidence[]
+  reviewPurchases   ReviewPurchase[]
+  appliedForVendors Vendor[]             @relation("Vendor_AppliedAssessment")
+
+  @@index([organizationId, vendorId, status])
+  @@index([templateId])
+  @@index([organizationId, submittedAt])
+}
+
+model AssessmentRun {
+  id                         Int                              @id @default(autoincrement())
+  organizationId             Int
+  vendorId                   Int
+  templateId                 Int
+  title                      String?
+  description                String?
+  status                     AssessmentStatus                 @default(IN_PROGRESS)
+  dueAt                      DateTime?
+  startedAt                  DateTime?
+  completedAt                DateTime?
+  createdAt                  DateTime                         @default(now())
+  updatedAt                  DateTime                         @updatedAt
+  templateSnapshot           Json?
+  answers                    Json?
+  submittedAt                DateTime?
+  evidenceLinks              AssessmentEvidence[]
+  evidenceRequests           EvidenceRequest[]
+  reviewAssignments          AssessmentReviewAssignment[]
+  reviewOutcomes             AssessmentReviewOutcome[]
+  releaseRequests            AssessmentReviewReleaseRequest[]
+  organization               Organization                     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  template                   AssessmentTemplate               @relation(fields: [templateId], references: [id])
+  vendor                     Vendor                           @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  truvernCreditLedgerEntries TruvernCreditLedgerEntry[]
+  inviteRuns                 VendorAssessmentInviteRun[]
+
+  @@index([organizationId, vendorId, createdAt(sort: Desc)])
+  @@index([organizationId, templateId, createdAt(sort: Desc)])
+  @@index([vendorId])
+  @@index([templateId])
+  @@index([organizationId, status, updatedAt(sort: Desc)])
+  @@index([organizationId, dueAt])
+  @@index([organizationId, status, dueAt])
+  @@index([organizationId, completedAt(sort: Desc)])
+}
+
+model AssessmentReviewAssignment {
+  id                         Int                              @id @default(autoincrement())
+  organizationId             Int
+  vendorId                   Int
+  assessmentRunId            Int
+  assignmentType             AssessmentReviewAssignmentType
+  status                     AssessmentReviewAssignmentStatus @default(ASSIGNED)
+  priority                   ReviewPriority                   @default(NORMAL)
+  membershipId               Int?
+  assessorUserId             String?
+  requestedByMembershipId    Int?
+  note                       String?
+  advisoryAck                Boolean                          @default(false)
+  advisoryAckAt              DateTime?
+  advisoryNoticeVersion      String?
+  startedAt                  DateTime?
+  completedAt                DateTime?
+  createdAt                  DateTime                         @default(now())
+  updatedAt                  DateTime                         @updatedAt
+  assessmentRun              AssessmentRun                    @relation(fields: [assessmentRunId], references: [id], onDelete: Cascade)
+  membership                 OrgMembership?                   @relation("AssessmentReviewAssignmentMembership", fields: [membershipId], references: [id])
+  organization               Organization                     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  requestedByMembership      OrgMembership?                   @relation("AssessmentReviewAssignmentRequestedBy", fields: [requestedByMembershipId], references: [id])
+  vendor                     Vendor                           @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  outcomes                   AssessmentReviewOutcome[]
+  releaseRequests            AssessmentReviewReleaseRequest[]
+  truvernCreditLedgerEntries TruvernCreditLedgerEntry[]
+
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, assessmentRunId, createdAt(sort: Desc)])
+  @@index([organizationId, vendorId, createdAt(sort: Desc)])
+  @@index([organizationId, status, updatedAt(sort: Desc)])
+  @@index([organizationId, assignmentType, createdAt(sort: Desc)])
+  @@index([organizationId, status, priority, updatedAt(sort: Desc)])
+  @@index([organizationId, membershipId, status, updatedAt(sort: Desc)])
+  @@index([organizationId, assessorUserId, status, updatedAt(sort: Desc)])
+  @@index([organizationId, assignmentType, status, updatedAt(sort: Desc)])
+  @@index([organizationId, completedAt(sort: Desc)])
+  @@index([membershipId])
+  @@index([requestedByMembershipId])
+  @@index([assessorUserId])
+}
+
+model AssessmentReviewOutcome {
+  id                    Int                              @id @default(autoincrement())
+  organizationId        Int
+  vendorId              Int
+  assessmentRunId       Int
+  assignmentId          Int
+  assignmentType        AssessmentReviewAssignmentType
+  outcome               AssessmentReviewOutcomeType
+  releaseState          AssessmentReviewReleaseState     @default(INTERNAL)
+  summary               String?
+  note                  String?
+  findings              Json?
+  meta                  Json?
+  createdByMembershipId Int?
+  createdByUserId       Int?
+  submittedAt           DateTime                         @default(now())
+  releasedAt            DateTime?
+  supersededAt          DateTime?
+  createdAt             DateTime                         @default(now())
+  updatedAt             DateTime                         @updatedAt
+  decision              AssessmentReviewDecision         @default(PENDING)
+  executiveSummary      String?
+  findingsText          String?
+  isCurrent             Boolean                          @default(true)
+  remediation           String?
+  reviewerNote          String?
+  riskLevel             AssessmentReviewRiskLevel        @default(MEDIUM)
+  supersedesId          Int?
+  updatedByMembershipId Int?
+  updatedByUserId       Int?
+  version               Int                              @default(1)
+  assessmentRun         AssessmentRun                    @relation(fields: [assessmentRunId], references: [id], onDelete: Cascade)
+  assignment            AssessmentReviewAssignment       @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  createdByMembership   OrgMembership?                   @relation("AssessmentReviewOutcomeCreatedByMembership", fields: [createdByMembershipId], references: [id])
+  createdByUser         User?                            @relation("AssessmentReviewOutcomeCreatedByUser", fields: [createdByUserId], references: [id])
+  organization          Organization                     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  supersedes            AssessmentReviewOutcome?         @relation("AssessmentReviewOutcomeSupersedes", fields: [supersedesId], references: [id])
+  supersededBy          AssessmentReviewOutcome[]        @relation("AssessmentReviewOutcomeSupersedes")
+  updatedByMembership   OrgMembership?                   @relation("AssessmentReviewOutcomeUpdatedByMembership", fields: [updatedByMembershipId], references: [id])
+  updatedByUser         User?                            @relation("AssessmentReviewOutcomeUpdatedByUser", fields: [updatedByUserId], references: [id])
+  vendor                Vendor                           @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  releaseRequests       AssessmentReviewReleaseRequest[]
+
+  @@index([organizationId, submittedAt(sort: Desc)])
+  @@index([organizationId, assessmentRunId, submittedAt(sort: Desc)])
+  @@index([organizationId, assessmentRunId, isCurrent, submittedAt(sort: Desc)])
+  @@index([organizationId, vendorId, submittedAt(sort: Desc)])
+  @@index([organizationId, releaseState, submittedAt(sort: Desc)])
+  @@index([organizationId, outcome, submittedAt(sort: Desc)])
+  @@index([organizationId, decision, submittedAt(sort: Desc)])
+  @@index([organizationId, riskLevel, submittedAt(sort: Desc)])
+  @@index([assignmentId, submittedAt(sort: Desc)])
+  @@index([assignmentId, isCurrent, submittedAt(sort: Desc)])
+  @@index([createdByMembershipId])
+  @@index([createdByUserId])
+  @@index([updatedByMembershipId])
+  @@index([updatedByUserId])
+  @@index([supersedesId])
+}
+
+model AssessmentReviewReleaseRequest {
+  id                      Int                                  @id @default(autoincrement())
+  organizationId          Int
+  vendorId                Int
+  assessmentRunId         Int
+  assignmentId            Int
+  outcomeId               Int?
+  packagePrimaryRunId     Int?
+  requestedByMembershipId Int
+  requestedByUserId       Int?
+  decidedByMembershipId   Int?
+  decidedByUserId         Int?
+  status                  AssessmentReviewReleaseRequestStatus @default(PENDING)
+  rationale               String?
+  note                    String?
+  currentApprovalStep     Int                                  @default(1)
+  requestedAt             DateTime                             @default(now())
+  decidedAt               DateTime?
+  createdAt               DateTime                             @default(now())
+  updatedAt               DateTime                             @updatedAt
+  approvals               AssessmentReviewReleaseApproval[]
+  assessmentRun           AssessmentRun                        @relation(fields: [assessmentRunId], references: [id], onDelete: Cascade)
+  assignment              AssessmentReviewAssignment           @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  decidedByMembership     OrgMembership?                       @relation("AssessmentReviewReleaseRequestDecidedByMembership", fields: [decidedByMembershipId], references: [id])
+  decidedByUser           User?                                @relation("AssessmentReviewReleaseRequestDecidedByUser", fields: [decidedByUserId], references: [id])
+  organization            Organization                         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  outcome                 AssessmentReviewOutcome?             @relation(fields: [outcomeId], references: [id])
+  requestedByMembership   OrgMembership                        @relation("AssessmentReviewReleaseRequestRequestedByMembership", fields: [requestedByMembershipId], references: [id])
+  requestedByUser         User?                                @relation("AssessmentReviewReleaseRequestRequestedByUser", fields: [requestedByUserId], references: [id])
+  vendor                  Vendor                               @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, status, createdAt(sort: Desc)])
+  @@index([organizationId, assessmentRunId, createdAt(sort: Desc)])
+  @@index([organizationId, assignmentId, createdAt(sort: Desc)])
+  @@index([organizationId, vendorId, createdAt(sort: Desc)])
+  @@index([requestedByMembershipId])
+  @@index([requestedByUserId])
+  @@index([decidedByMembershipId])
+  @@index([decidedByUserId])
+  @@index([outcomeId])
+  @@index([packagePrimaryRunId])
+}
+
+model AssessmentReviewReleaseApproval {
+  id                Int                                     @id @default(autoincrement())
+  organizationId    Int
+  releaseRequestId  Int
+  sequence          Int                                     @default(1)
+  decision          AssessmentReviewReleaseApprovalDecision @default(PENDING)
+  note              String?
+  actorMembershipId Int?
+  actorUserId       Int?
+  createdAt         DateTime                                @default(now())
+  updatedAt         DateTime                                @updatedAt
+  actorMembership   OrgMembership?                          @relation("AssessmentReviewReleaseApprovalActorMembership", fields: [actorMembershipId], references: [id])
+  actorUser         User?                                   @relation("AssessmentReviewReleaseApprovalActorUser", fields: [actorUserId], references: [id])
+  organization      Organization                            @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  releaseRequest    AssessmentReviewReleaseRequest          @relation(fields: [releaseRequestId], references: [id], onDelete: Cascade)
+
+  @@unique([releaseRequestId, sequence])
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, releaseRequestId, createdAt(sort: Desc)])
+  @@index([organizationId, decision, createdAt(sort: Desc)])
+  @@index([actorMembershipId])
+  @@index([actorUserId])
+}
+
+model Evidence {
+  id                Int                  @id @default(autoincrement())
+  vendorId          Int?
+  organizationId    Int
+  kind              EvidenceKind
+  title             String
+  createdAt         DateTime             @default(now())
+  notes             String?
+  updatedAt         DateTime             @updatedAt
+  url               String?
+  documentDate      DateTime?
+  validUntil        DateTime?
+  evidenceRequestId Int?                 @unique
+  assessmentLinks   AssessmentEvidence[]
+  evidenceRequest   EvidenceRequest?     @relation("Evidence_Fulfills_Request", fields: [evidenceRequestId], references: [id])
+  organization      Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendor            Vendor?              @relation(fields: [vendorId], references: [id])
+  fulfilledRequests EvidenceRequest[]    @relation("EvidenceRequestFulfilledBy")
+  issueLinks        IssueEvidence[]      @relation("IssueEvidence_Evidence")
+
+  @@index([organizationId, kind])
+  @@index([vendorId])
+  @@index([evidenceRequestId])
+}
+
+model EvidenceCoveragePolicy {
+  id             Int          @id @default(autoincrement())
+  organizationId Int
+  name           String       @default("Default Coverage Policy")
+  enabled        Boolean      @default(true)
+  requiredKinds  Json
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+}
+
+model EvidenceRequest {
+  id                  Int                   @id @default(autoincrement())
+  vendorId            Int
+  organizationId      Int
+  assessmentRunId     Int?
+  title               String
+  notes               String?
+  dueAt               DateTime?
+  kind                EvidenceKind
+  status              EvidenceRequestStatus @default(REQUESTED)
+  fulfilledEvidenceId Int?
+  fulfilledAt         DateTime?
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime              @updatedAt
+  fulfilledByEvidence Evidence?             @relation("Evidence_Fulfills_Request")
+  fulfilledEvidence   Evidence?             @relation("EvidenceRequestFulfilledBy", fields: [fulfilledEvidenceId], references: [id])
+  assessmentRun       AssessmentRun?        @relation(fields: [assessmentRunId], references: [id], onDelete: SetNull)
+  organization        Organization          @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendor              Vendor                @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, status])
+  @@index([organizationId, vendorId])
+  @@index([vendorId, kind])
+  @@index([organizationId, status, dueAt])
+  @@index([organizationId, updatedAt(sort: Desc)])
+  @@index([assessmentRunId])
+  @@index([organizationId, vendorId], map: "EvidenceRequest_org_vendor_idx")
+  @@index([vendorId, kind], map: "EvidenceRequest_vendor_kind_idx")
+}
+
+model EvidenceRequestTemplate {
+  id             Int          @id @default(autoincrement())
+  organizationId Int
+  name           String
+  slug           String
+  description    String?
+  artifactHints  String?
+  defaultSlaDays Int          @default(30)
+  isActive       Boolean      @default(true)
+  deletedAt      DateTime?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, slug])
+  @@index([organizationId, deletedAt])
+  @@index([organizationId, isActive, updatedAt])
+}
+
+model Issue {
+  id               Int             @id @default(autoincrement())
+  title            String
+  vendorId         Int?
+  assignedToId     Int?
+  createdById      Int?
+  description      String?
+  openedAt         DateTime?
+  organizationId   Int
+  createdAt        DateTime        @default(now())
+  dueAt            DateTime?
+  updatedAt        DateTime        @updatedAt
+  severity         IssueSeverity   @default(MEDIUM)
+  status           IssueStatus     @default(OPEN)
+  assessmentId     Int?
+  acceptedRiskAt   DateTime?
+  acceptedRiskBy   String?
+  acceptedRiskNote String?
+  organization     Organization    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendor           Vendor?         @relation(fields: [vendorId], references: [id])
+  evidenceLinks    IssueEvidence[] @relation("IssueEvidence_Issue")
+
+  @@index([organizationId, status, severity])
+  @@index([vendorId])
+  @@index([assignedToId])
+  @@index([createdById])
+}
+
+model RiskSnapshot {
+  id              Int               @id @default(autoincrement())
+  organizationId  Int
+  vendorId        Int?
+  scope           RiskSnapshotScope @default(VENDOR)
+  periodStart     DateTime?
+  periodEnd       DateTime?
+  overallRank     Int
+  criticalCount   Int               @default(0)
+  highCount       Int               @default(0)
+  mediumCount     Int               @default(0)
+  lowCount        Int               @default(0)
+  overdueReqCount Int               @default(0)
+  staleEvCount    Int               @default(0)
+  createdAt       DateTime          @default(now())
+  organization    Organization      @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendor          Vendor?           @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, scope, createdAt])
+  @@index([organizationId, vendorId, createdAt])
+}
+
+model IssueEvent {
+  id        Int      @id @default(autoincrement())
+  issueId   Int
+  type      String?
+  payload   Json?
+  createdAt DateTime @default(now())
+
+  @@index([issueId, createdAt(sort: Desc)])
+  @@map("IssueEvent")
+}
+
+model IssueEvidence {
+  id             Int          @id @default(autoincrement())
+  organizationId Int
+  issueId        Int
+  evidenceId     Int
+  createdAt      DateTime     @default(now())
+  evidence       Evidence     @relation("IssueEvidence_Evidence", fields: [evidenceId], references: [id], onDelete: Cascade)
+  issue          Issue        @relation("IssueEvidence_Issue", fields: [issueId], references: [id], onDelete: Cascade)
+  organization   Organization @relation("OrganizationIssueEvidence", fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, issueId, evidenceId], name: "organizationId_issueId_evidenceId")
+  @@index([organizationId, issueId])
+  @@index([organizationId, evidenceId])
+}
+
+model Subscription {
+  id                      Int                      @id @default(autoincrement())
+  organizationId          Int                      @unique
+  status                  SubscriptionStatus       @default(ACTIVE)
+  stripeCustomerId        String?
+  currentPeriodEnd        DateTime?
+  createdAt               DateTime                 @default(now())
+  updatedAt               DateTime                 @updatedAt
+  currentPeriodStart      DateTime?
+  planTier                PlanTier                 @default(FREE)
+  stripeSubscriptionId    String?
+  cancelAt                DateTime?
+  cancelAtPeriodEnd       Boolean                  @default(false)
+  canceledAt              DateTime?
+  endedAt                 DateTime?
+  stripePriceId           String?
+  stripeProductId         String?
+  trialEnd                DateTime?
+  billingRiskState        BillingRiskState         @default(ACTIVE)
+  downgradedAt            DateTime?
+  gracePeriodEndsAt       DateTime?
+  lastPaymentFailedAt     DateTime?
+  lastPaymentSucceededAt  DateTime?
+  lastWebhookEventAt      DateTime?
+  lastWebhookEventId      String?
+  billingNotificationLogs BillingNotificationLog[]
+  organization            Organization             @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, status])
+  @@index([stripeCustomerId])
+  @@index([stripeSubscriptionId])
+  @@index([billingRiskState])
+  @@index([gracePeriodEndsAt])
+  @@index([currentPeriodEnd])
+}
+
+model BillingNotificationLog {
+  id             Int           @id @default(autoincrement())
+  organizationId Int
+  subscriptionId Int?
+  eventKey       String        @db.VarChar(191)
+  templateKey    String        @db.VarChar(191)
+  sentTo         String        @db.VarChar(191)
+  sentAt         DateTime      @default(now())
+  metadata       Json?
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
+
+  @@index([organizationId, sentAt])
+  @@index([eventKey])
+  @@index([organizationId, templateKey])
+  @@index([subscriptionId, sentAt])
+  @@index([organizationId, sentTo, sentAt])
+}
+
+model UsageEvent {
+  id             Int          @id @default(autoincrement())
+  organizationId Int
+  kind           String
+  createdAt      DateTime     @default(now())
+  meta           Json?
+  value          Int          @default(1)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, kind, createdAt])
+}
+
+model InviteToken {
+  id             Int          @id @default(autoincrement())
+  organizationId Int
+  email          String?
+  role           OrgRole      @default(MEMBER)
+  token          String       @unique
+  expiresAt      DateTime?
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, expiresAt])
+}
+
+model AssessmentEvidence {
+  id              Int            @id @default(autoincrement())
+  organizationId  Int
+  assessmentId    Int
+  evidenceId      Int
+  createdAt       DateTime       @default(now())
+  assessmentRunId Int?
+  assessment      Assessment     @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  assessmentRun   AssessmentRun? @relation(fields: [assessmentRunId], references: [id])
+  evidence        Evidence       @relation(fields: [evidenceId], references: [id], onDelete: Cascade)
+  organization    Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, assessmentId, evidenceId])
+  @@index([organizationId, assessmentId])
+  @@index([organizationId, assessmentRunId])
+  @@index([organizationId, evidenceId])
+}
+
+model ReviewPurchase {
+  id                      Int                  @id @default(autoincrement())
+  organizationId          Int
+  vendorId                Int
+  assessmentId            Int?
+  status                  ReviewPurchaseStatus @default(PENDING)
+  stripeCheckoutSessionId String?              @unique
+  stripePaymentIntentId   String?              @unique
+  amountCents             Int?
+  currency                String?
+  paidAt                  DateTime?
+  requestedByMembershipId Int?
+  reviewerMembershipId    Int?
+  createdAt               DateTime             @default(now())
+  updatedAt               DateTime             @updatedAt
+  assessment              Assessment?          @relation(fields: [assessmentId], references: [id])
+  organization            Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  requestedByMembership   OrgMembership?       @relation("ReviewPurchaseRequestedBy", fields: [requestedByMembershipId], references: [id])
+  reviewerMembership      OrgMembership?       @relation("ReviewPurchaseReviewer", fields: [reviewerMembershipId], references: [id])
+  vendor                  Vendor               @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, vendorId, createdAt(sort: Desc)])
+  @@index([status, createdAt(sort: Desc)])
+  @@index([assessmentId])
+}
+
+model ReviewRequest {
+  id                Int                  @id @default(autoincrement())
+  organizationId    Int
+  vendorId          Int
+  templateId        Int?
+  title             String?
+  note              String?
+  status            ReviewRequestStatus  @default(REQUESTED)
+  dueAt             DateTime?
+  assessmentId      Int?
+  runId             Int?
+  templateSnapshot  Json?
+  responses         Json?
+  createdAt         DateTime             @default(now())
+  updatedAt         DateTime             @updatedAt
+  assignments       ReviewAssignment[]
+  evidenceLinks     ReviewEvidenceLink[]
+  organization      Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  template          AssessmentTemplate?  @relation(fields: [templateId], references: [id])
+  vendor            Vendor               @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  reviewerResponses ReviewResponse[]
+
+  @@index([organizationId, vendorId, createdAt(sort: Desc)])
+  @@index([organizationId, status, updatedAt(sort: Desc)])
+  @@index([organizationId, status, dueAt])
+  @@index([vendorId])
+}
+
+model ReviewAssignment {
+  id              Int                    @id @default(autoincrement())
+  organizationId  Int
+  reviewRequestId Int
+  membershipId    Int?
+  reviewerUserId  String?
+  status          ReviewAssignmentStatus @default(PENDING)
+  startedAt       DateTime?
+  submittedAt     DateTime?
+  note            String?
+  createdAt       DateTime               @default(now())
+  updatedAt       DateTime               @updatedAt
+  membership      OrgMembership?         @relation(fields: [membershipId], references: [id])
+  organization    Organization           @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  reviewRequest   ReviewRequest          @relation(fields: [reviewRequestId], references: [id], onDelete: Cascade)
+  evidenceLinks   ReviewEvidenceLink[]
+  response        ReviewResponse?
+
+  @@unique([organizationId, reviewRequestId, membershipId])
+  @@index([organizationId, reviewRequestId])
+  @@index([organizationId, reviewerUserId])
+  @@index([organizationId, status, updatedAt(sort: Desc)])
+  @@index([organizationId, membershipId, status, updatedAt(sort: Desc)])
+  @@index([membershipId])
+}
+
+model ReviewResponse {
+  id                 Int              @id @default(autoincrement())
+  organizationId     Int
+  reviewRequestId    Int
+  reviewAssignmentId Int              @unique
+  responses          Json?
+  draftSavedAt       DateTime?
+  submittedAt        DateTime?
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+  organization       Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  assignment         ReviewAssignment @relation(fields: [reviewAssignmentId], references: [id], onDelete: Cascade)
+  reviewRequest      ReviewRequest    @relation(fields: [reviewRequestId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, reviewRequestId])
+  @@index([organizationId, submittedAt])
+}
+
+model ReviewEvidenceLink {
+  id                 Int              @id @default(autoincrement())
+  organizationId     Int
+  reviewRequestId    Int
+  reviewAssignmentId Int
+  questionKey        String?
+  title              String?
+  url                String
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+  organization       Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  assignment         ReviewAssignment @relation(fields: [reviewAssignmentId], references: [id], onDelete: Cascade)
+  reviewRequest      ReviewRequest    @relation(fields: [reviewRequestId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, reviewRequestId, reviewAssignmentId])
+  @@index([reviewAssignmentId, createdAt(sort: Desc)])
+  @@index([reviewRequestId, createdAt(sort: Desc)])
+  @@index([organizationId, createdAt(sort: Desc)])
+}
+
+model VendorPortalUser {
+  id             Int          @id @default(autoincrement())
+  organizationId Int
+  vendorId       Int
+  clerkUserId    String       @unique
+  email          String?
+  role           OrgRole      @default(VENDOR)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendor         Vendor       @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, vendorId])
+  @@index([vendorId])
+  @@index([organizationId, updatedAt(sort: Desc)])
+}
+
+model VendorAssessmentInviteToken {
+  id              Int                         @id @default(autoincrement())
+  organizationId  Int
+  vendorId        Int
+  kind            InviteKind                  @default(VENDOR_ASSESSMENT)
+  token           String                      @unique
+  recipientEmails String[]                    @default([])
+  expiresAt       DateTime?
+  lastSentAt      DateTime?
+  revokedAt       DateTime?
+  usedAt          DateTime?
+  createdAt       DateTime                    @default(now())
+  updatedAt       DateTime                    @updatedAt
+  runs            VendorAssessmentInviteRun[]
+  organization    Organization                @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  vendor          Vendor                      @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, vendorId, createdAt(sort: Desc)])
+  @@index([organizationId, expiresAt])
+  @@index([vendorId])
+  @@index([token])
+}
+
+model VendorAssessmentInviteRun {
+  id             Int                         @id @default(autoincrement())
+  organizationId Int
+  vendorId       Int
+  inviteId       Int
+  runId          Int
+  createdAt      DateTime                    @default(now())
+  invite         VendorAssessmentInviteToken @relation(fields: [inviteId], references: [id], onDelete: Cascade)
+  organization   Organization                @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  run            AssessmentRun               @relation(fields: [runId], references: [id], onDelete: Cascade)
+  vendor         Vendor                      @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+
+  @@unique([inviteId, runId])
+  @@index([organizationId, vendorId, createdAt(sort: Desc)])
+  @@index([runId])
+  @@index([inviteId])
+}
+
+model ProgramState {
+  id                        Int                @id @default(autoincrement())
+  organizationId            Int
+  status                    ProgramStateStatus @default(DRAFT)
+  createdAt                 DateTime           @default(now())
+  updatedAt                 DateTime           @updatedAt
+  asOfAt                    DateTime?
+  coveragePct               Int                @default(0)
+  latestSnapshotSealedAt    DateTime?
+  openCriticalIssuesCount   Int                @default(0)
+  openEvidenceRequestsCount Int                @default(0)
+  openHighIssuesCount       Int                @default(0)
+  openIssuesCount           Int                @default(0)
+  periodKey                 String?            @db.VarChar(32)
+  sealHash                  String?            @db.VarChar(128)
+  sealNote                  String?
+  sealVersion               Int                @default(1)
+  sealedAt                  DateTime?
+  sealedByUserId            String?
+  staleEvidenceCount        Int                @default(0)
+  summaryBody               String?
+  summaryTitle              String?            @db.VarChar(180)
+  supersedesId              Int?
+  vendorCount               Int                @default(0)
+  vendorsCoveredCount       Int                @default(0)
+  artifacts                 ProgramArtifact[]
+  organization              Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  supersedes                ProgramState?      @relation("ProgramStateSupersedes", fields: [supersedesId], references: [id])
+  supersededBy              ProgramState[]     @relation("ProgramStateSupersedes")
+
+  @@unique([organizationId, periodKey])
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, status])
+  @@index([organizationId, sealedAt(sort: Desc)])
+  @@index([organizationId, asOfAt(sort: Desc)])
+  @@map("program_states")
+}
+
+model ProgramArtifact {
+  id             Int                 @id @default(autoincrement())
+  organizationId Int
+  programStateId Int
+  kind           ProgramArtifactKind
+  label          String?             @db.VarChar(120)
+  href           String?
+  artifactHash   String?             @db.VarChar(128)
+  createdAt      DateTime            @default(now())
+  organization   Organization        @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  programState   ProgramState        @relation(fields: [programStateId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, programStateId])
+  @@index([organizationId, kind])
+  @@map("program_artifacts")
+}
+
+model BoardPacketSeal {
+  id                   Int          @id @default(autoincrement())
+  createdAt            DateTime     @default(now())
+  organizationId       Int
+  periodKey            String
+  matKey               String
+  sortKey              String?
+  sortDir              String?
+  payloadHash          String
+  payloadJson          Json
+  createdByClerkUserId String?
+  publicToken          String       @unique
+  organization         Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, periodKey, createdAt(sort: Desc)])
+  @@index([organizationId, periodKey, matKey, createdAt(sort: Desc)])
+  @@index([organizationId, payloadHash])
+  @@index([publicToken])
+  @@map("board_packet_seals")
+}
+
+model ProgramStateSeal {
+  id               Int                @id @default(autoincrement())
+  createdAt        DateTime           @default(now())
+  organizationId   Int
+  periodKey        String
+  sealedAt         DateTime           @default(now())
+  payload          Json?
+  payloadHash      String
+  sealedHash       String?
+  alg              String             @default("SHA256")
+  attestedByUserId String?
+  publicToken      String?            @unique
+  supersedesId     Int?
+  summaryJson      Json
+  organization     Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  supersedes       ProgramStateSeal?  @relation("ProgramStateSealSupersedes", fields: [supersedesId], references: [id])
+  supersededBy     ProgramStateSeal[] @relation("ProgramStateSealSupersedes")
+
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, sealedAt(sort: Desc)])
+  @@index([organizationId, periodKey, createdAt(sort: Desc)])
+  @@index([organizationId, periodKey, sealedAt(sort: Desc)])
+  @@index([organizationId, periodKey])
+  @@index([sealedHash])
+  @@index([organizationId, sealedHash])
+  @@index([organizationId, payloadHash])
+  @@map("program_state_seals")
+}
+
+model ArtifactLedgerEntry {
+  id              Int                   @id @default(autoincrement())
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime              @updatedAt
+  organizationId  Int
+  kind            ArtifactKind
+  status          ArtifactStatus        @default(SEALED)
+  publicToken     String                @unique
+  alg             String                @default("SHA-256")
+  payloadHash     String
+  sealedHash      String
+  title           String?
+  summary         String?
+  subjectVendorId Int?
+  periodStart     DateTime?
+  periodEnd       DateTime?
+  canonicalPath   String?
+  verifyPath      String?
+  supersedesId    Int?
+  meta            Json?
+  organization    Organization          @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  subjectVendor   Vendor?               @relation("ArtifactLedgerSubjectVendor", fields: [subjectVendorId], references: [id])
+  supersedes      ArtifactLedgerEntry?  @relation("ArtifactSupersedes", fields: [supersedesId], references: [id])
+  supersededBy    ArtifactLedgerEntry[] @relation("ArtifactSupersedes")
+
+  @@index([organizationId, kind, createdAt])
+  @@index([kind, status, createdAt])
+  @@index([subjectVendorId])
+  @@index([sealedHash])
+  @@index([payloadHash])
+  @@map("artifact_ledger_entries")
+}
+
+model StripeEvent {
+  id                    String        @id
+  type                  String
+  livemode              Boolean       @default(false)
+  apiVersion            String?
+  created               Int?
+  payload               Json
+  status                String        @default("RECEIVED")
+  processedAt           DateTime?
+  error                 String?
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+  organizationId        Int?
+  relatedSubscriptionId String?
+  organization          Organization? @relation(fields: [organizationId], references: [id])
+
+  @@index([type, createdAt(sort: Desc)])
+  @@index([status, createdAt(sort: Desc)])
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([relatedSubscriptionId])
+}
+
+model ReviewCreditBalance {
+  id             Int          @id @default(autoincrement())
+  organizationId Int          @unique
+  credits        Int          @default(0)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model TruvernCreditPolicy {
+  id                                Int          @id @default(autoincrement())
+  organizationId                    Int          @unique
+  allowPrepaidCreditsFirst          Boolean      @default(true)
+  allowCardFallback                 Boolean      @default(false)
+  requireApprovalBeforeFinalCredits Boolean      @default(false)
+  minimumBalanceAlert               Int?
+  autoBuyCreditsEnabled             Boolean      @default(false)
+  monthlyUsageReportEnabled         Boolean      @default(false)
+  createdAt                         DateTime     @default(now())
+  updatedAt                         DateTime     @updatedAt
+  autoBuyPack                       String?      @default("CREDITS_10")
+  autoBuyThreshold                  Int?         @default(2)
+  organization                      Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+}
+
+model TruvernCreditLedgerEntry {
+  id                 Int                         @id @default(autoincrement())
+  organizationId     Int
+  assessmentRunId    Int?
+  reviewAssignmentId Int?
+  actorUserId        String?
+  eventKey           String                      @unique
+  entryType          TruvernCreditEntryType
+  fundingSource      TruvernCreditFundingSource?
+  status             TruvernCreditEntryStatus    @default(POSTED)
+  availableDelta     Int                         @default(0)
+  reservedDelta      Int                         @default(0)
+  consumedDelta      Int                         @default(0)
+  quantity           Int
+  currency           String?                     @db.VarChar(3)
+  unitPriceCents     Int?
+  amountCents        Int?
+  note               String?
+  metadataJson       Json?
+  createdAt          DateTime                    @default(now())
+  assessmentRun      AssessmentRun?              @relation(fields: [assessmentRunId], references: [id])
+  organization       Organization                @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  reviewAssignment   AssessmentReviewAssignment? @relation(fields: [reviewAssignmentId], references: [id])
+
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([organizationId, entryType, createdAt(sort: Desc)])
+  @@index([organizationId, reviewAssignmentId])
+  @@index([organizationId, assessmentRunId])
+}
+
+model Notification {
+  id             Int                  @id @default(autoincrement())
+  organizationId Int
+  userId         String
+  type           NotificationType
+  title          String
+  body           String?
+  href           String?
+  entityType     String?
+  entityId       Int?
+  priority       NotificationPriority @default(NORMAL)
+  isRead         Boolean              @default(false)
+  readAt         DateTime?
+  emailSentAt    DateTime?
+  emailError     String?
+  dedupeKey      String?
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
+  organization   Organization         @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, dedupeKey])
+  @@index([organizationId, userId, isRead, createdAt(sort: Desc)])
+  @@index([organizationId, createdAt(sort: Desc)])
+  @@index([userId, isRead, createdAt(sort: Desc)])
+  @@index([organizationId, type, createdAt(sort: Desc)])
+  @@index([organizationId, userId, type, createdAt(sort: Desc)])
+  @@index([organizationId, entityType, entityId, createdAt(sort: Desc)])
+  @@index([organizationId, dedupeKey])
+}
+
+model NotificationPreference {
+  id             Int              @id @default(autoincrement())
+  organizationId Int
+  userId         String
+  type           NotificationType
+  inAppEnabled   Boolean          @default(true)
+  emailEnabled   Boolean          @default(true)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  organization   Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, userId, type])
+  @@index([organizationId, userId])
+  @@index([organizationId, type])
+}
+
+enum TemplateOrigin {
+  ORG
+  CATALOG
+}
+
+enum RiskSnapshotScope {
+  PORTFOLIO
+  VENDOR
+}
+
+enum ProgramStateStatus {
+  DRAFT
+  SEALED
+  SUPERSEDED
+  VOID
+}
+
+enum ProgramArtifactKind {
+  BOARD_PACKET
+  BOARD_REPORT
+  TRUST_NETWORK
+  SNAPSHOT_EXPORT
+  OTHER
+}
+
+enum ReviewPurchaseStatus {
+  PENDING
+  PAID
+  CONSUMED
+  CANCELED
+  REFUNDED
+}
+
+enum ReviewRequestStatus {
+  REQUESTED
+  IN_REVIEW
+  SUBMITTED
+  REOPENED
+  CANCELED
+  FINALIZED
+}
+
+enum ReviewAssignmentStatus {
+  PENDING
+  IN_PROGRESS
+  SUBMITTED
+}
+
+enum AssessmentReviewAssignmentType {
+  INTERNAL
+  TRUVERN
+}
+
+enum AssessmentReviewAssignmentStatus {
+  ASSIGNED
+  IN_REVIEW
+  COMPLETED
+  CANCELED
+  AWAITING_ASSIGNMENT
+  RELEASED
+  PENDING
+}
+
+enum AssessmentReviewDecision {
+  PENDING
+  APPROVE
+  APPROVE_WITH_CONDITIONS
+  REJECT
+  ESCALATE
+}
+
+enum AssessmentReviewRiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum AssessmentReviewOutcomeType {
+  APPROVED
+  APPROVED_WITH_NOTES
+  CHANGES_REQUIRED
+  REJECTED
+  RELEASED
+}
+
+enum AssessmentReviewReleaseState {
+  INTERNAL
+  SHARED_WITH_REQUESTER
+  RELEASED
+  SUPERSEDED
+}
+
+enum AssessmentReviewReleaseRequestStatus {
+  PENDING
+  APPROVED
+  DENIED
+  CANCELED
+}
+
+enum AssessmentReviewReleaseApprovalDecision {
+  PENDING
+  APPROVED
+  DENIED
+}
+
+enum ReviewPriority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}
+
+enum OrgRole {
+  OWNER
+  ADMIN
+  ANALYST
+  VIEWER
+  VENDOR
+  MEMBER
+}
+
+enum PlanTier {
+  FREE
+  PRO
+  ENTERPRISE
+}
+
+enum SubscriptionStatus {
+  INACTIVE
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELED
+}
+
+enum BillingRiskState {
+  ACTIVE
+  RENEWAL_DUE
+  PAST_DUE
+  GRACE_PERIOD
+  AT_RISK
+  DOWNGRADED
+}
+
+enum VendorTier {
+  CRITICAL
+  IMPORTANT
+  STANDARD
+  BASIC
+  PREMIUM
+}
+
+enum VendorCriticality {
+  HIGH
+  MEDIUM
+  LOW
+  CRITICAL
+}
+
+enum VendorMateriality {
+  LOW
+  MODERATE
+  HIGH
+  MATERIAL
+}
+
+enum AssessmentStatus {
+  DRAFT
+  IN_PROGRESS
+  COMPLETED
+  ARCHIVED
+  SUBMITTED
+  REVIEW
+  COMPLETE
+}
+
+enum IssueSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum IssueStatus {
+  OPEN
+  IN_REVIEW
+  RESOLVED
+  ACCEPTED_RISK
+  IN_PROGRESS
+  ACCEPTED
+}
+
+enum EvidenceKind {
+  POLICY
+  REPORT
+  SCREENSHOT
+  CERTIFICATE
+  OTHER
+  SOC2
+  ISO27001
+  PENTEST
+  BCP_DRP
+}
+
+enum EvidenceRequestStatus {
+  REQUESTED
+  RECEIVED
+  SUBMITTED
+  APPROVED
+  REJECTED
+  OVERDUE
+  CANCELLED
+}
+
+enum QuestionKind {
+  YES_NO
+  TEXT
+  SELECT
+  MULTI_SELECT
+  NUMBER
+}
+
+enum InviteKind {
+  ORG_INVITE
+  VENDOR_ASSESSMENT
+}
+
+enum ArtifactKind {
+  PROGRAM_STATE
+  BOARD_PACKET
+  TRUST_NETWORK
+  BOARD_REPORT
+  VENDOR_SNAPSHOT
+}
+
+enum ArtifactStatus {
+  SEALED
+  SUPERSEDED
+  REVOKED
+}
+
+enum NotificationType {
+  ASSESSMENT_ASSIGNED_INTERNAL
+  ASSESSMENT_ASSIGNED_TRUVERN
+  REVIEW_COMPLETED
+  ISSUE_ASSIGNED
+  ISSUE_ESCALATED
+  EVIDENCE_REQUEST_OVERDUE
+  PROGRAM_STATE_SEALED
+  REVIEW_STARTED
+  REVIEW_RELEASED
+  ASSESSMENT_SUBMITTED
+  EVIDENCE_REQUEST_ASSIGNED
+  VENDOR_ASSESSMENT_RECEIVED
+  BOARD_PACKET_SEALED
+  TRUST_NETWORK_PUBLISHED
+  REVIEW_RELEASE_REQUESTED
+  REVIEW_RELEASE_APPROVED
+  REVIEW_RELEASE_DENIED
+}
+
+enum NotificationPriority {
+  LOW
+  NORMAL
+  HIGH
+  CRITICAL
+}
+
+enum TruvernCreditEntryType {
+  PURCHASE
+  GRANT
+  ADJUSTMENT
+  RESERVATION
+  RELEASE
+  CONSUMPTION
+  REFUND
+  REVERSAL
+}
+
+enum TruvernCreditFundingSource {
+  PREPAID_CREDITS
+  CARD_FALLBACK
+  MANUAL
+  PROMOTIONAL
+}
+
+enum TruvernCreditEntryStatus {
+  POSTED
+  VOIDED
+}

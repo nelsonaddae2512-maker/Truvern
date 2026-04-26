@@ -1,0 +1,6 @@
+﻿ENV FILE CHECK
+==============
+.env FOUND
+.env.local FOUND
+.env.production MISSING
+.env.example FOUND
