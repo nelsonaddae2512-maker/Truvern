@@ -498,3 +498,4 @@ vercel_backup.json
 .env*.BAK
 .env.__pulled.BAK
 .env.temp.BAK
+.vercel
