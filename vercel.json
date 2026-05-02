@@ -1,6 +1,19 @@
 {
     "headers":  [
                     {
+                        "source":  "/(vendors|trust|docs|buyers|review-desk|truvern|board-packet|api|assessment|assessments|assessment-templates|vendor-assessment|vendor-evidence|settings|billing|onboarding|dashboard|program-state|admin)(.*)",
+                        "headers":  [
+                                        {
+                                            "key":  "X-Robots-Tag",
+                                            "value":  "noindex, nofollow, noarchive, nosnippet"
+                                        },
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "no-store"
+                                        }
+                                    ]
+                    },
+                    {
                         "headers":  [
                                         {
                                             "key":  "Cache-Control",
