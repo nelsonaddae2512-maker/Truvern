@@ -65,7 +65,7 @@ export default clerkMiddleware(async (auth, req) => {
 
   if (pathname === "/") return withCanonical(res, "/");
   if (pathname === "/pricing") return withCanonical(res, "/pricing");
-  if (pathname === "/trust-network") return withCanonical(res, "/trust-network");
+  if (pathname === "/trust-network" || pathname.startsWith("/trust-network/")) return withCanonical(res, "/trust-network");
 
   // Public board packets must be token-only. No bare public /board-packet page.
   if (pathname === "/board-packet" || pathname.startsWith("/board-packet/")) {
